@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>65B14DEF-5623-4B9B-8EFD-28D58B66358B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>examples</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8C99E32046D739B6E7C78CF3ADBF3E7B6511996D</key>
+		<string>https://github.com/amraboelela/myos.ubuntu.frameworks.git</string>
+		<key>95ECB36C24475C77D99BD70765BC384F65B3D412</key>
+		<string>https://github.com/amraboelela/myos.android.examples.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>examples.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8C99E32046D739B6E7C78CF3ADBF3E7B6511996D</key>
+		<string>../../../ubuntu/frameworks</string>
+		<key>95ECB36C24475C77D99BD70765BC384F65B3D412</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/amraboelela/myos.android.examples.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>95ECB36C24475C77D99BD70765BC384F65B3D412</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>95ECB36C24475C77D99BD70765BC384F65B3D412</string>
+			<key>IDESourceControlWCCName</key>
+			<string>examples</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8C99E32046D739B6E7C78CF3ADBF3E7B6511996D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>frameworks</string>
+		</dict>
+	</array>
+</dict>
+</plist>

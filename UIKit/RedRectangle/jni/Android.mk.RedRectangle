@@ -1,0 +1,10 @@
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := RedRecangleNativeActivity
+LOCAL_SRC_FILES := ${MYOS_PATH}/android/examples/libs/libRedRecangleNativeActivity.so
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := RedRectangle
+LOCAL_SRC_FILES := ${MYOS_PATH}/android/examples/libs/libRedRectangle.so
+include $(PREBUILT_SHARED_LIBRARY)
