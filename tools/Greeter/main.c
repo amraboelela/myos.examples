@@ -1,3 +1,5 @@
+
+#include <stdio.h>
 #include <Foundation/Foundation.h>
 
 @interface Greeter:NSObject
@@ -11,8 +13,6 @@
 - (void)greet;
 
 @end
-
-#include <stdio.h>
 
 @implementation Greeter
 
