@@ -4,6 +4,6 @@ APP_NAME=Greeter
 LDLIBS=-lCoreFoundation -lFoundation
 
 OBJECTS = \
-    main.o \
+    main \
 
 include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-executable
