@@ -12,4 +12,4 @@ APP_NAME=EnvironmentVariables
 OBJECTS = \
     main.o \
 
-include ${MY_FRAMEWORKS_PATH}/resources/makefile-executable
+include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-executable

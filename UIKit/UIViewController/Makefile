@@ -10,4 +10,4 @@ OBJECTS = \
     RedRectangleVC.o \
     RRSolidView.o \
 
-include ${MYOS_PATH}/android/sdk/resources/makefile-shared
+include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-shared
