@@ -1,5 +1,8 @@
 
 APP_NAME=Greeter
+
+LDLIBS=-lCoreFoundation -lFoundation
+
 OBJECTS = \
     main.o \
 
