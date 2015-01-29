@@ -15,4 +15,4 @@
 # Amr Aboelela <amraboelela@gmail.com>
 #
 
-source ${MYOS_PATH}/android/sdk/scripts/nativeActivity-run.sh
+source ${MYOS_PATH}/sdk/nativeApp-run.sh
