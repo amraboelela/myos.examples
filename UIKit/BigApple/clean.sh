@@ -15,9 +15,4 @@
 # Amr Aboelela <amraboelela@gmail.com>
 #
 
-EXAMPLE_DIRECTORY=$(pwd | awk -F'/' '{print $NF}')
-
-source ${MYOS_PATH}/android/sdk/scripts/clean.sh
-cd ${MYOS_PATH}/android/examples/${EXAMPLE_DIRECTORY}
-make clean
-source ${MYOS_PATH}/android/sdk/scripts/nativeActivity-clean.sh
+source ${MYOS_PATH}/sdk/nativeApp-clean.sh
