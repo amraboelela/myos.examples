@@ -1,17 +1,5 @@
 
-#APP_NAME=HelloWorld
-
-#OUTPUT=$(APP_NAME)
-#CC=clang
-#files=main.c
-
-#all:$(files)
-#	$(CC) main.c -o $(OUTPUT)
-
 APP_NAME=HelloWorld-c
-#CFLAGS=-DDEBUG
-#LDLIBS= -lCoreFoundation -lFoundation -lCoreGraphics -lIOKit -lEGL -lGLESv1_CM -lOpenGLES -lCoreText
-#LDFLAGS=-v -Wl,--no-undefined
 OBJECTS = \
     main.o \
 

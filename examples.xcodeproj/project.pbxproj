@@ -8,23 +8,21 @@
 
 /* Begin PBXFileReference section */
 		F564A66419D0BF390069E9BB /* CoreAnimation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CoreAnimation; sourceTree = "<group>"; };
-		F564A66519D0BF390069E9BB /* ndk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ndk; sourceTree = "<group>"; };
 		F564A66619D0BF390069E9BB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		F564A66719D0BF390069E9BB /* Template */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Template; sourceTree = "<group>"; };
-		F564A66819D0BF390069E9BB /* Template-executable */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Template-executable"; sourceTree = "<group>"; };
 		F564A66919D0BF390069E9BB /* tools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tools; sourceTree = "<group>"; };
 		F564A66A19D0BF390069E9BB /* UIKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIKit; sourceTree = "<group>"; };
+		F5E864841A79BBD50058E642 /* android */ = {isa = PBXFileReference; lastKnownFileType = folder; path = android; sourceTree = "<group>"; };
+		F5E864851A79BBD50058E642 /* ubuntu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ubuntu; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		F564A65D19D0BF060069E9BB = {
 			isa = PBXGroup;
 			children = (
+				F5E864841A79BBD50058E642 /* android */,
+				F5E864851A79BBD50058E642 /* ubuntu */,
 				F564A66419D0BF390069E9BB /* CoreAnimation */,
-				F564A66519D0BF390069E9BB /* ndk */,
 				F564A66619D0BF390069E9BB /* README.md */,
-				F564A66719D0BF390069E9BB /* Template */,
-				F564A66819D0BF390069E9BB /* Template-executable */,
 				F564A66919D0BF390069E9BB /* tools */,
 				F564A66A19D0BF390069E9BB /* UIKit */,
 			);
