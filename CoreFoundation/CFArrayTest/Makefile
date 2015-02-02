@@ -1,9 +1,9 @@
 
-APP_NAME=Greeter
+APP_NAME=CFArrayTest
 
 LDLIBS=-lCoreFoundation -lFoundation
 
 OBJECTS = \
-    main \
+    main.o \
 
 include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-executable
