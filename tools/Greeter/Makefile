@@ -1,9 +1,11 @@
 
 APP_NAME=Greeter
 
-LDLIBS=-lCoreFoundation -lFoundation
+#LDLIBS=-lgnustep-base
+#LDLIBS=-lCoreFoundation -lFoundation
+LDLIBS=-lFoundation
 
 OBJECTS = \
-    main \
+    main.o \
 
 include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-executable
