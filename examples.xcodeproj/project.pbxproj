@@ -12,7 +12,7 @@
 		F564A66919D0BF390069E9BB /* tools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tools; sourceTree = "<group>"; };
 		F564A66A19D0BF390069E9BB /* UIKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIKit; sourceTree = "<group>"; };
 		F5E864841A79BBD50058E642 /* android */ = {isa = PBXFileReference; lastKnownFileType = folder; path = android; sourceTree = "<group>"; };
-		F5E864851A79BBD50058E642 /* ubuntu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ubuntu; sourceTree = "<group>"; };
+		F5F835BA1A7F351000C52FC7 /* CoreFoundation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CoreFoundation; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -20,8 +20,8 @@
 			isa = PBXGroup;
 			children = (
 				F5E864841A79BBD50058E642 /* android */,
-				F5E864851A79BBD50058E642 /* ubuntu */,
 				F564A66419D0BF390069E9BB /* CoreAnimation */,
+				F5F835BA1A7F351000C52FC7 /* CoreFoundation */,
 				F564A66619D0BF390069E9BB /* README.md */,
 				F564A66919D0BF390069E9BB /* tools */,
 				F564A66A19D0BF390069E9BB /* UIKit */,
