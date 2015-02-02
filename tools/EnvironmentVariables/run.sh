@@ -16,3 +16,4 @@
 #
 
 source ${MYOS_PATH}/sdk/nativeApp-run.sh
+./EnvironmentVariables
