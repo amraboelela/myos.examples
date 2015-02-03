@@ -151,9 +151,9 @@ int main (int argc, const char * argv[])
     }
     
     ////////////////////Testing indexOfObjectIdenticalTo:///////////////////
-    NSString* str = [NSString stringWithFormat:@"%@Green"];
-    if ([arr indexOfObjectIdenticalTo: str] == NSNotFound
-        && [arr indexOfObjectIdenticalTo: colors[0]] == 0) {
+    NSString *str = [NSString stringWithFormat:@"Green"];
+    if ([arr indexOfObjectIdenticalTo:str] == NSNotFound
+        && [arr indexOfObjectIdenticalTo:colors[0]] == 0) {
         NSLog(@"Testing indexOfObjectIdenticalTo ... sucess");
         result = result && true;
     } else {
