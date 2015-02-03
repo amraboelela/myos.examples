@@ -2,6 +2,14 @@
 #import <CoreFoundation/CoreFoundation.h>
 #import <CoreFoundation/CFArray-private.h>
 
+NSString *const redStr = @"Red";
+NSString *const greenStr = @"Green";
+NSString *const blueStr = @"Blue";
+NSString *const blackStr = @"Black";
+NSString *const yellowStr = @"Yellow";
+NSString *const magintaStr = @"Maginta";
+NSString *const thisStr = @"This";
+
 int main (int argc, const char * argv[])
 {
     NSAutoreleasePool *pool;
@@ -12,7 +20,7 @@ int main (int argc, const char * argv[])
     NSLog(@"---------------");
     result = true;
     
-    CFStringRef colors[] = {@"Red", @"Green", @"Blue", @"Red", @"Yellow"};
+    CFStringRef colors[] = {redStr, greenStr, blueStr, redStr, yellowStr};
     NSArray* arr = CFArrayCreate(NULL,
                                  (const void**)colors,
                                  5, NULL);
@@ -27,7 +35,7 @@ int main (int argc, const char * argv[])
     }
     
     ///////////////////Testing containsObject////////////////////
-    if ([arr containsObject: @"Red"] == YES && [arr containsObject: @"Maginta"] == NO) {
+    if ([arr containsObject:redStr] == YES && [arr containsObject:magintaStr] == NO) {
         NSLog(@"Testing containsObject ... sucess");
         result = result && true;
     } else {
@@ -37,7 +45,7 @@ int main (int argc, const char * argv[])
     
     
     ////////////////////Testing lastObject////////////////////////
-    if ([[arr lastObject] isEqual: @"Yellow"] && ! [[arr lastObject] isEqual: @"Red"]) {
+    if ([[arr lastObject] isEqual:@"Yellow"] && ![[arr lastObject] isEqual:@"Red"]) {
         NSLog(@"Testing lastObject ... sucess");
         result = result && true;
     } else {
@@ -46,7 +54,7 @@ int main (int argc, const char * argv[])
     }
     
     ////////////////////Testing objectAtIndex:///////////////////
-    if ([arr objectAtIndex: 1] == @"Green" && [arr objectAtIndex: 3] == @"Red") {
+    if ([arr objectAtIndex:1] == greenStr && [arr objectAtIndex:3] == redStr) {
         NSLog(@"Testing objectAtIndex ... sucess");
         result = result && true;
     } else {
@@ -59,8 +67,8 @@ int main (int argc, const char * argv[])
     NSRange range = NSMakeRange(2, 3);
     objects = malloc(sizeof(id) * range.length);
     [arr getObjects:objects range:range];
-    if ([objects[0] isEqual: @"Blue"] && [objects[1] isEqual: @"Red"]
-        && [objects[2] isEqual: @"Yellow"]) {
+    if ([objects[0] isEqual:@"Blue"] && [objects[1] isEqual:@"Red"]
+        && [objects[2] isEqual:@"Yellow"]) {
         NSLog(@"Testing getObjects:range: ... sucess");
         result = result && true;
     } else {
@@ -69,7 +77,7 @@ int main (int argc, const char * argv[])
     }
     
     ////////////////////Testing objectAtIndexedSubscript:///////////////////
-    if ([arr objectAtIndexedSubscript: 1] == @"Green" && [arr objectAtIndexedSubscript: 3] == @"Red") {
+    if ([arr objectAtIndexedSubscript:1] == greenStr && [arr objectAtIndexedSubscript:3] == redStr) {
         NSLog(@"Testing objectAtIndexedSubscript ... sucess");
         result = result && true;
     } else {
@@ -78,9 +86,9 @@ int main (int argc, const char * argv[])
     }
     
     ////////////////////Testing objectsAtIndexes:///////////////////
-    NSArray* subarr = [arr objectsAtIndexes: [[NSIndexSet alloc] initWithIndexesInRange: NSMakeRange(2, 3)]];
-    if ([[subarr objectAtIndex: 0] isEqual: @"Blue"] && [[subarr objectAtIndex: 1] isEqual: @"Red"]
-        && [[subarr objectAtIndex: 2] isEqual: @"Yellow"]) {
+    NSArray *subarr = [arr objectsAtIndexes:[[NSIndexSet alloc] initWithIndexesInRange:NSMakeRange(2, 3)]];
+    if ([[subarr objectAtIndex:0] isEqual:@"Blue"] && [[subarr objectAtIndex: 1] isEqual:@"Red"]
+        && [[subarr objectAtIndex:2] isEqual:@"Yellow"]) {
         NSLog(@"Testing objectsAtIndexes ... sucess");
         result = result && true;
     } else {
@@ -89,7 +97,7 @@ int main (int argc, const char * argv[])
     }
     
     ////////////////////Testing objectEnumerator:///////////////////
-    NSEnumerator* it = [arr objectEnumerator];
+    NSEnumerator *it = [arr objectEnumerator];
     Boolean enumRes = true;
     int i = 0;
     id aKey;
@@ -129,8 +137,8 @@ int main (int argc, const char * argv[])
     }
     
     ////////////////////Testing indexOfObject:///////////////////
-    if ([arr indexOfObject: @"Green"] == 1 && [arr indexOfObject: @"Red"] == 0
-        && [arr indexOfObject: @"Yellow"] == 4 && [arr indexOfObject: @"Maginta"] == NSNotFound) {
+    if ([arr indexOfObject:greenStr] == 1 && [arr indexOfObject:redStr] == 0
+        && [arr indexOfObject:yellowStr] == 4 && [arr indexOfObject:@"Maginta"] == NSNotFound) {
         NSLog(@"Testing indexOfObject ... sucess");
         result = result && true;
     } else {
@@ -139,10 +147,10 @@ int main (int argc, const char * argv[])
     }
     
     ////////////////////Testing indexOfObject:inRange:///////////////////
-    if ([arr indexOfObject: @"Green" inRange: NSMakeRange(2,3)] == NSNotFound
-        && [arr indexOfObject: @"Red" inRange: NSMakeRange(2,3)] == 3
-        && [arr indexOfObject: @"Yellow" inRange: NSMakeRange(1,4)] == 4
-        && [arr indexOfObject: @"Maginta" inRange: NSMakeRange(3,2)] == NSNotFound) {
+    if ([arr indexOfObject:greenStr inRange:NSMakeRange(2,3)] == NSNotFound
+        && [arr indexOfObject:redStr inRange:NSMakeRange(2,3)] == 3
+        && [arr indexOfObject:yellowStr inRange:NSMakeRange(1,4)] == 4
+        && [arr indexOfObject:@"Maginta" inRange:NSMakeRange(3,2)] == NSNotFound) {
         NSLog(@"Testing indexOfObject:inRange: ... sucess");
         result = result && true;
     } else {
@@ -201,32 +209,32 @@ int main (int argc, const char * argv[])
     NSLog(@"Testing NSMutableArray");
     NSLog(@"---------------");
     
-    NSMutableArray* mutableArr = [NSMutableArray arrayWithCapacity: 5];
+    NSMutableArray *mutableArr = [NSMutableArray arrayWithCapacity:5];
     
     //Testing addObject
     id prevCount = [mutableArr count];
-    [mutableArr addObject: @"This"];
-    if ([mutableArr count] == 1 && prevCount == 0)
+    [mutableArr addObject:thisStr];
+    if ([mutableArr count] == 1 && prevCount == 0) {
         NSLog(@"Testing addObject ... sucess");
-    else
+    } else {
         NSLog(@"Testing addObject ... failed");
-    
+    }
     //Testing addObjectsFromArray
-    [mutableArr addObjectsFromArray: arr];
-    if ([mutableArr containsObject: @"array"] == YES && [mutableArr containsObject: @"ses"] == NO)
+    [mutableArr addObjectsFromArray:arr];
+    if ([mutableArr containsObject:greenStr] == YES && [mutableArr containsObject:@"ses"] == NO) {
         NSLog(@"Testing addObjectsFromArray ... sucess");
-    else
+    } else {
         NSLog(@"Testing addObjectsFromArray ... failed");
-    
+    }
     //Testing exchangeObjectAtIndex:withObjectAtIndex:
     //array is now {"This", "This", "is", "an", "array"}
-    [mutableArr exchangeObjectAtIndex: 1 withObjectAtIndex: 3];
+    [mutableArr exchangeObjectAtIndex:1 withObjectAtIndex:3];
     //array is now {"This", "an", "is", "This", "array"}
-    if ([[mutableArr objectAtIndex: 1] isEqual: @"an"] && [[mutableArr objectAtIndex: 3] isEqual: @"This"])
+    if ([[mutableArr objectAtIndex:1] isEqual:@"Blue"] && [[mutableArr objectAtIndex:3] isEqual:@"Red"]) {
         NSLog(@"Testing exchangeObjectAtIndex:withObjectAtIndex: ... sucess");
-    else
+    } else {
         NSLog(@"Testing exchangeObjectAtIndex:withObjectAtIndex: ... failed");
-    
+    }
     /* TODO
      – addObject:
      – addObjectsFromArray:

@@ -104,14 +104,15 @@ int main (int argc, const char * argv[])
     //Testing addObject
     id prevCount = [mutableArr count];
     [mutableArr addObject: @"This"];
-    if ([mutableArr count] == 1 && prevCount == 0)
+    if ([mutableArr count] == 1 && prevCount == 0) {
         NSLog(@"Testing addObject ... sucess");
-    else
+    } else {
         NSLog(@"Testing addObject ... failed");
+    }
     
     //Testing addObjectsFromArray
-    [mutableArr addObjectsFromArray: arr];
-    if ([mutableArr containsObject: @"array"] == YES && [mutableArr containsObject: @"ses"] == NO)
+    [mutableArr addObjectsFromArray:arr];
+    if ([mutableArr containsObject:@"array"] == YES && [mutableArr containsObject:@"ses"] == NO)
         NSLog(@"Testing addObjectsFromArray ... sucess");
     else
         NSLog(@"Testing addObjectsFromArray ... failed");
