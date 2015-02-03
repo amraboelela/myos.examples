@@ -1,5 +1,5 @@
 
-APP_NAME=CFArrayTFBExample
+APP_NAME=CFArrayTFB
 
 LDLIBS=-lCoreFoundation -lFoundation
 
