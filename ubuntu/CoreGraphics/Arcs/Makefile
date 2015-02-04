@@ -1,7 +1,7 @@
 
 APP_NAME=Arcs
 
-LDLIBS=-lCoreFoundation -lFoundation -lCoreGraphics
+LDLIBS=-lCoreFoundation -lFoundation -lNAIOKit -lNACoreGraphics -lNAUIKit
 
 OBJECTS = \
     main.o \
