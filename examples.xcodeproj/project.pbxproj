@@ -10,10 +10,9 @@
 		F564A66419D0BF390069E9BB /* CoreAnimation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CoreAnimation; sourceTree = "<group>"; };
 		F564A66619D0BF390069E9BB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		F564A66A19D0BF390069E9BB /* UIKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIKit; sourceTree = "<group>"; };
-		F5B716D41A819AE100DA002A /* ubuntu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ubuntu; sourceTree = "<group>"; };
 		F5B716D81A82A6AF00DA002A /* c-tools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "c-tools"; sourceTree = "<group>"; };
 		F5B716D91A82A6AF00DA002A /* Foundation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Foundation; sourceTree = "<group>"; };
-		F5E864841A79BBD50058E642 /* android */ = {isa = PBXFileReference; lastKnownFileType = folder; path = android; sourceTree = "<group>"; };
+		F5B716DA1A82A85800DA002A /* CoreGraphics */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CoreGraphics; sourceTree = "<group>"; };
 		F5F835BA1A7F351000C52FC7 /* CoreFoundation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CoreFoundation; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -21,13 +20,12 @@
 		F564A65D19D0BF060069E9BB = {
 			isa = PBXGroup;
 			children = (
-				F5E864841A79BBD50058E642 /* android */,
 				F5B716D81A82A6AF00DA002A /* c-tools */,
 				F564A66419D0BF390069E9BB /* CoreAnimation */,
 				F5F835BA1A7F351000C52FC7 /* CoreFoundation */,
+				F5B716DA1A82A85800DA002A /* CoreGraphics */,
 				F5B716D91A82A6AF00DA002A /* Foundation */,
 				F564A66619D0BF390069E9BB /* README.md */,
-				F5B716D41A819AE100DA002A /* ubuntu */,
 				F564A66A19D0BF390069E9BB /* UIKit */,
 			);
 			sourceTree = "<group>";
