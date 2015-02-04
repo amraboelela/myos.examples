@@ -1,9 +1,4 @@
-#ifdef __APPLE__
-#include <ApplicationServices/ApplicationServices.h>
-#else
 #include <CoreGraphics/CoreGraphics.h>
-#endif
-
 #include <Foundation/Foundation.h>
 
 void draw(CGContextRef ctx, CGRect rect)

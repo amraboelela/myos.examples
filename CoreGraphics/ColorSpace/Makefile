@@ -1,7 +1,7 @@
 
 APP_NAME=ColorSpace
 
-LDLIBS=-lCoreFoundation -lFoundation -lCoreGraphics
+LDLIBS=-lCoreFoundation -lFoundation -lNAIOKit -lNACoreGraphics -lNAUIKit
 
 OBJECTS = \
     main.o \
