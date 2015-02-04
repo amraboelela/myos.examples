@@ -1,8 +1,8 @@
-##myos.android.examples
+##myos.examples
 
 * Depends on:
-  * [myos.android.frameworks](https://github.com/amraboelela/myos.android.frameworks)
-  * [myos.android.sdk](https://github.com/amraboelela/myos.android.sdk)
+  * [myos.frameworks](https://github.com/amraboelela/myos.frameworks)
+  * [myos.sdk](https://github.com/amraboelela/myos.sdk)
         
 * For more info:
-[myos.examples.wiki](https://github.com/amraboelela/myos.examples/wiki)
+[myos.frameworks.wiki](https://github.com/amraboelela/myos.frameworks/wiki)
