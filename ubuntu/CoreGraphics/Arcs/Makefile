@@ -5,5 +5,6 @@ LDLIBS=-lCoreFoundation -lFoundation -lCoreGraphics
 
 OBJECTS = \
     main.o \
+    arcs.o \
 
 include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-executable
