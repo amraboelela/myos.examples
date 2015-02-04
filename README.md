@@ -1,4 +1,4 @@
-##myos.android.examples
+##myos.examples
 
 * Depends on:
   * [myos.frameworks](https://github.com/amraboelela/myos.frameworks)
