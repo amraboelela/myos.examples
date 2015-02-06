@@ -27,16 +27,16 @@ void draw(CGContextRef ctx, CGRect rect)
             }
         }
     }
-    return;
+
     if (nil == png) {
         CGDataProviderRef pngData = CGDataProviderCreateWithFilename("test.png");
         png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
         CGDataProviderRelease(pngData);
     }
-    
     CGRect pngRect = CGRectMake(0,0,rect.size.width/3,rect.size.height);
     CGContextDrawImage(ctx, pngRect, png);
     
+    return;    
     if (nil == jpeg) {
         CGDataProviderRef jpegData = CGDataProviderCreateWithFilename("test.jpg");
         jpeg = CGImageCreateWithJPEGDataProvider(jpegData, NULL, YES, kCGRenderingIntentDefault);
