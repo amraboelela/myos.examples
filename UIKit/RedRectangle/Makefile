@@ -1,11 +1,18 @@
 
 LIB_NAME=RedRectangle
 CFLAGS=-DDEBUG -fblocks
-LDLIBS=-llog -landroid -lCoreFoundation -lFoundation -lNAOpenGLES -lNAUIKit
+LDLIBS=-lCoreFoundation -lFoundation -lNAOpenGLES -lNAUIKit
+
 OBJECTS = \
     rd_app_glue.o \
     rd_main.o \
     AppDelegate.o \
     RRSolidView.o \
+
+ifeq ($(BASE_OS),android)
+    LDLIBS+=-llog -landroid
+    OBJECTS+= rd_app_glue.o \
+        rd_main.o \
+endif
 
 include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-shared
