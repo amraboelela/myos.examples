@@ -1,5 +1,5 @@
 
-APP_NAME=CFArrayTest
+APP_NAME=CFArray
 
 LDLIBS=-lCoreFoundation -lFoundation
 
