@@ -6,6 +6,7 @@ LDLIBS=-lCoreFoundation -lFoundation -lNAOpenGLES -lNAUIKit
 OBJECTS = \
     AppDelegate.o \
     RRSolidView.o \
+    main.o \
 
 ifeq ($(BASE_OS),android)
     LDLIBS+=-llog -landroid
