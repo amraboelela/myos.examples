@@ -8,5 +8,5 @@
 
 int main(int argc, char *argv[])
 {
-    UIApplicationMain(argc, argv, nil, @"BigAppleDelegate");
+    _UIApplicationMain(argc, argv, nil, @"BigAppleDelegate");
 }

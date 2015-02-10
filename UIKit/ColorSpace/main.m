@@ -21,5 +21,5 @@
 
 int main(int argc, char *argv[])
 {
-    return UIApplicationMain(argc, argv, nil, @"AppDelegate");
+    return _UIApplicationMain(argc, argv, nil, @"AppDelegate");
 }
