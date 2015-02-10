@@ -19,5 +19,5 @@ ifeq ($(BASE_OS),android)
 
     include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-shared
 else
-    include ${MYOS_PATH}/android/sdk/resources/makefile-executable
+    include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-executable
 endif
