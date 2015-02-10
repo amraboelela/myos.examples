@@ -1,5 +1,10 @@
 
-LIB_NAME=RedRectangle
+ifeq ($(BASE_OS),android)
+    LIB_NAME=RedRectangle
+else
+    APP_NAME=RedRectangle
+endif
+
 CFLAGS=-DDEBUG -fblocks
 LDLIBS=-lCoreFoundation -lFoundation -lNAOpenGLES -lNAUIKit
 
@@ -13,6 +18,7 @@ ifeq ($(BASE_OS),android)
     OBJECTS+= rd_app_glue.o \
         rd_main.o \
 
+    include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-shared
+else
+    include ${MYOS_PATH}/android/sdk/resources/makefile-executable
 endif
-
-include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-shared

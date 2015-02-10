@@ -4,7 +4,6 @@
  */
 
 #import "BigApple_Prefix.pch"
-//#import <Cocoa/Cocoa.h>
 #import "BigAppleDelegate.h"
 
 int main(int argc, char *argv[])

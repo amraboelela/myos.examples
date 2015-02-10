@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#This script is only for Android environment
+
 #cd BigApple
 #ant uninstall
 #cd ..

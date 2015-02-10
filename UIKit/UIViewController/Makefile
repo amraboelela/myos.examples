@@ -1,13 +1,25 @@
 
-LIB_NAME=UIViewController
+ifeq ($(BASE_OS),android)
+    LIB_NAME=UIViewController
+else
+    APP_NAME=UIViewController
+endif
+
 CFLAGS=-DDEBUG -fblocks
-LDLIBS= -llog -landroid -lCoreFoundation -lFoundation -lNAOpenGLES -lNAUIKit
-#LDFLAGS=-v -Wl,--no-undefined
+LDLIBS=-lCoreFoundation -lFoundation -lNAOpenGLES -lNAUIKit -lNACoreGraphics
+
 OBJECTS = \
-    rd_app_glue.o \
-    rd_main.o \
     AppDelegate.o \
     RedRectangleVC.o \
     RRSolidView.o \
 
-include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-shared
+ifeq ($(BASE_OS),android)
+    LDLIBS+=-llog -landroid
+    OBJECTS+= \
+        rd_app_glue.o \
+        rd_main.o \
+
+    include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-shared
+else
+    include ${MYOS_PATH}/android/sdk/resources/makefile-executable
+endif
