@@ -4,8 +4,6 @@ CFLAGS=-DDEBUG -fblocks
 LDLIBS=-lCoreFoundation -lFoundation -lNAOpenGLES -lNAUIKit
 
 OBJECTS = \
-    rd_app_glue.o \
-    rd_main.o \
     AppDelegate.o \
     RRSolidView.o \
 
