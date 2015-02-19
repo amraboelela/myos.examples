@@ -39,7 +39,7 @@
     
     //[NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(addSolidView:) userInfo:nil repeats:NO];
     [window makeKeyAndVisible];
-    DLog();
+    //DLog();
 //    RRSolidView* solidView2 = [[[RRSolidView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)] autorelease];
 //    [solidView addSubview:solidView2];
     return YES;

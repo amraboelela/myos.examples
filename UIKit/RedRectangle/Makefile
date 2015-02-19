@@ -6,7 +6,7 @@ else
 endif
 
 CFLAGS=-DDEBUG -fblocks
-LDLIBS=-lCoreFoundation -lFoundation -lNAOpenGLES -lNAUIKit
+LDLIBS=-lCoreFoundation -lFoundation -lNAOpenGLES -lNAUIKit -lNACoreAnimation
 
 OBJECTS = \
     AppDelegate.o \
