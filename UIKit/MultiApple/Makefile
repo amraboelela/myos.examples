@@ -12,6 +12,7 @@ OBJECTS = \
     AppDelegate.o \
     AppleController.o \
     MyUIViewController.o \
+    main.o \
 
 ifeq ($(BASE_OS),android)
     LDLIBS+=-llog -landroid

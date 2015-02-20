@@ -12,6 +12,7 @@ OBJECTS = \
     AppDelegate.o \
     RedRectangleVC.o \
     RRSolidView.o \
+    main.o \
 
 ifeq ($(BASE_OS),android)
     LDLIBS+=-llog -landroid

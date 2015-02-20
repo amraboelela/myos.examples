@@ -6,11 +6,12 @@ else
 endif
 
 CFLAGS=-DDEBUG -fblocks
-LDLIBS=-lCoreFoundation -lFoundation -lNAOpenGLES -lNAUIKit -lNACoreGraphics
+LDLIBS=-lCoreFoundation -lFoundation -lNAOpenGLES -lNAUIKit -lNACoreGraphics -lNACoreAnimation
 
 OBJECTS = \
     AppDelegate.o \
     ColorSpaceView.o \
+    main.o \
 
 ifeq ($(BASE_OS),android)
     LDLIBS+=-llog -landroid
@@ -22,4 +23,3 @@ ifeq ($(BASE_OS),android)
 else
     include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-executable
 endif
-

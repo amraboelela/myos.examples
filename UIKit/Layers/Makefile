@@ -13,6 +13,7 @@ OBJECTS = \
     Layers.o \
     BlueView.o \
     SmileyFaceView.o \
+    main.o \
 
 ifeq ($(BASE_OS),android)
     LDLIBS+=-llog -landroid

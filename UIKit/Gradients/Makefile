@@ -11,6 +11,7 @@ LDLIBS=-lCoreFoundation -lFoundation -lNAOpenGLES -lNAUIKit -lNACoreGraphics -lN
 OBJECTS = \
     AppDelegate.o \
     GradientsView.o \
+    main.o \
 
 ifeq ($(BASE_OS),android)
     LDLIBS+=-llog -landroid
