@@ -42,25 +42,11 @@ static CGImageRef png, jpeg, tiff;
 {
     DLog(@"rect: %@", NSStringFromCGRect(rect));
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-//    CGContextScaleCTM(ctx, 2, 2);
-
-    //CGContextSetRGBFillColor(ctx, 0.4, 0.6, 1.0, 0.7);
-    //CGContextFillRect(ctx, rect);
-
-    // Draw a checkerboard
- /*   CGContextSetRGBFillColor(ctx, 0.4, 0.4, 0.4, 1.0);
-    unsigned int x, y;
-    for (x=0; x<rect.size.width; x+=10) {
-        for (y=0; y<rect.size.height; y+=10) {
-            if (((x % 20) == 0) != ((y % 20) == 0)) {
-                CGContextFillRect(ctx,  CGRectMake(x, y, 10, 10));
-            }
-        }
-    }*/
+    
     //if (nil == png) {
-    CGDataProviderRef pngData = CGDataProviderCreateWithFilenameWithAsset("sunglass.png");
+    CGDataProviderRef pngData = CGDataProviderCreateWithFilename("sunglass.png");
     //DLog(@"pngData: %@", pngData);
-    png = CGImageCreateWithPNGDataProviderWithAsset(pngData, NULL, YES, kCGRenderingIntentDefault);
+    png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
     //DLog(@"png: %@", png);
     CGDataProviderRelease(pngData);
     //}
@@ -77,14 +63,14 @@ static CGImageRef png, jpeg, tiff;
     CGContextDrawImage(ctx, pngRect, png);
 //    CGContextRestoreGState(ctx);
 
-    pngData = CGDataProviderCreateWithFilenameWithAsset("eartharrow.png");
-    png = CGImageCreateWithPNGDataProviderWithAsset(pngData, NULL, YES, kCGRenderingIntentDefault);
+    pngData = CGDataProviderCreateWithFilename("eartharrow.png");
+    png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
     CGDataProviderRelease(pngData);
     pngRect = CGRectMake(10,0,250,250);
     CGContextDrawImage(ctx, pngRect, png);
 
-    pngData = CGDataProviderCreateWithFilenameWithAsset("cuckoo.png");
-    png = CGImageCreateWithPNGDataProviderWithAsset(pngData, NULL, YES, kCGRenderingIntentDefault);
+    pngData = CGDataProviderCreateWithFilename("cuckoo.png");
+    png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
     CGDataProviderRelease(pngData);
     pngRect = CGRectMake(70,70,100,100);
     CGContextDrawImage(ctx, pngRect, png);
