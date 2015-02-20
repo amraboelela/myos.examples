@@ -48,8 +48,8 @@ static CGImageRef png, jpeg, tiff;
     //DLog(@"pngData: %@", pngData);
     CGRect pngRect;
     CGContextSaveGState(ctx);
-    CGContextScaleCTM(ctx, 1, -1.0);
     CGContextTranslateCTM(ctx, 0, 300);
+    CGContextScaleCTM(ctx, 1, -1.0);
     if (pngData) {
         png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
         //DLog(@"png: %@", png);
