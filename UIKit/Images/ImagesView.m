@@ -46,37 +46,41 @@ static CGImageRef png, jpeg, tiff;
     //if (nil == png) {
     CGDataProviderRef pngData = CGDataProviderCreateWithFilename("sunglass.png");
     //DLog(@"pngData: %@", pngData);
-    png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
-    //DLog(@"png: %@", png);
-    CGDataProviderRelease(pngData);
-    //}
-    DLog(@"png: %@", png);
-    float width = 256;
-    float height = 256;
-    float xPosition = (rect.size.width - width)/2;
-    float yPosition = (rect.size.height - height)/2;
-    CGRect pngRect = CGRectMake(150,150,130,130);//rect.size.width,rect.size.height);
-    CGContextSaveGState(ctx);
-    //CGContextConcatCTM(ctx, CGContextGetUserSpaceToDeviceSpaceTransform(ctx));
-    CGContextTranslateCTM(ctx, 0, 300);
-    CGContextScaleCTM(ctx, 1, -1.0);
-    CGContextDrawImage(ctx, pngRect, png);
-//    CGContextRestoreGState(ctx);
+    if (pngData) {
+        png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
+        //DLog(@"png: %@", png);
+        CGDataProviderRelease(pngData);
+        //}
+        /*DLog(@"png: %@", png);
+        float width = 256;
+        float height = 256;
+        float xPosition = (rect.size.width - width)/2;
+        float yPosition = (rect.size.height - height)/2;
+        CGRect pngRect = CGRectMake(150,150,130,130);//rect.size.width,rect.size.height);
+        CGContextSaveGState(ctx);
+        //CGContextConcatCTM(ctx, CGContextGetUserSpaceToDeviceSpaceTransform(ctx));
+        CGContextTranslateCTM(ctx, 0, 300);
+        CGContextScaleCTM(ctx, 1, -1.0);*/
+        CGContextDrawImage(ctx, pngRect, png);
+        //CGContextRestoreGState(ctx);
+    }
 
     pngData = CGDataProviderCreateWithFilename("eartharrow.png");
-    png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
-    CGDataProviderRelease(pngData);
-    pngRect = CGRectMake(10,0,250,250);
-    CGContextDrawImage(ctx, pngRect, png);
-
+    if (pngData) {
+        png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
+        CGDataProviderRelease(pngData);
+        pngRect = CGRectMake(10,0,250,250);
+        CGContextDrawImage(ctx, pngRect, png);
+    }
+    
     pngData = CGDataProviderCreateWithFilename("cuckoo.png");
-    png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
-    CGDataProviderRelease(pngData);
-    pngRect = CGRectMake(70,70,100,100);
-    CGContextDrawImage(ctx, pngRect, png);
- 
-    CGContextRestoreGState(ctx);
-
+    if (pngData) {
+        png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
+        CGDataProviderRelease(pngData);
+        pngRect = CGRectMake(70,70,100,100);
+        CGContextDrawImage(ctx, pngRect, png);
+    }
+    //CGContextRestoreGState(ctx);
  
     return;
     if (nil == jpeg) {
