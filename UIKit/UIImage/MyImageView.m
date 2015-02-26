@@ -27,17 +27,18 @@
         self.imageView.frame = CGRectMake(70,70,kImageSize,kImageSize);
         [self addSubview:imageView];
 
+        return;
         // Single tap gesture
         UITapGestureRecognizer *singleTap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapped:)] autorelease];
         [self addGestureRecognizer:singleTap];
 
-        //DLog();
+        DLog();
         // Double tap gesture
         UITapGestureRecognizer *doubleTap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapped:)] autorelease];
         doubleTap.numberOfTapsRequired = 2;
         [self addGestureRecognizer:doubleTap];
         [singleTap requireGestureRecognizerToFail:doubleTap];
-        //DLog();
+        DLog();
 
         // Pan gesture
         UIPanGestureRecognizer *panGesture = [[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panMoved:)] autorelease];
@@ -63,7 +64,7 @@
         self.imageView.image = [UIImage imageNamed:@"sunglass.png"];
         //self.imageView.image = [UIImage imageNamed:@"cuckoo.png"];
         [UIView commitAnimations];
-        //DLog();
+        DLog();
     }
     return self;
 }
