@@ -50,8 +50,9 @@
         //self.superview.alpha = 1.0;
         //self.alpha = 1;
         self.imageView.alpha = 1;
+        DLog();
         [UIView commitAnimations];
-
+        DLog();
         return self;
         [UIView beginAnimations:@"animateContent" context:nil];
         [UIView setAnimationDelay:2];
