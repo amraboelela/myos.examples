@@ -35,8 +35,8 @@
 
         [self.button setTitle:@"Toto" forState:UIControlStateNormal];
         
-//        [button addTarget:self action:@selector(clickedButton:) forControlEvents:UIControlEventTouchDown];
-//        [button addTarget:self action:@selector(unClickButton:) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(clickedButton:) forControlEvents:UIControlEventTouchDown];
+        [button addTarget:self action:@selector(unClickButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
     }
     return self;
@@ -49,19 +49,19 @@
 }
 
 #pragma mark - Actions
-/*
+
 - (void)clickedButton:(id)sender
 {
-    DLog(@"sender: %@", sender);
+//    DLog(@"sender: %@", sender);
     self.button.highlighted = YES;
 //    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(unClickButton) userInfo:nil repeats:NO];
 }
 
 - (void)unClickButton:(id)sender
 {
-    DLog(@"sender: %@", sender);
+//    DLog(@"sender: %@", sender);
     self.button.highlighted = NO;
 }
-*/
+
 @end
 

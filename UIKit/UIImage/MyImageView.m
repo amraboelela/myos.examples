@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2012-2013. All rights reserved.
- *
- */
 
 #import "MyImageView.h"
 #import "AppDelegate.h"
@@ -27,18 +23,17 @@
         self.imageView.frame = CGRectMake(70,70,kImageSize,kImageSize);
         [self addSubview:imageView];
 
-        return;
         // Single tap gesture
         UITapGestureRecognizer *singleTap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapped:)] autorelease];
         [self addGestureRecognizer:singleTap];
 
-        DLog();
+        //DLog();
         // Double tap gesture
         UITapGestureRecognizer *doubleTap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapped:)] autorelease];
         doubleTap.numberOfTapsRequired = 2;
         [self addGestureRecognizer:doubleTap];
         [singleTap requireGestureRecognizerToFail:doubleTap];
-        DLog();
+        //DLog();
 
         // Pan gesture
         UIPanGestureRecognizer *panGesture = [[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panMoved:)] autorelease];
@@ -46,17 +41,18 @@
         [singleTap requireGestureRecognizerToFail:panGesture];
         [doubleTap requireGestureRecognizerToFail:panGesture];
 
-        self.superview.alpha = 0.0;
-        self.alpha = 0.0;
+        //self.superview.alpha = 0.0;
+        //self.alpha = 0.0;
         self.imageView.alpha = 0.0;
         [UIView beginAnimations:@"animateOpacity" context:nil];
         [UIView setAnimationDuration:2];
         [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-        self.superview.alpha = 1.0;
-        self.alpha = 1;
+        //self.superview.alpha = 1.0;
+        //self.alpha = 1;
         self.imageView.alpha = 1;
         [UIView commitAnimations];
 
+        return self;
         [UIView beginAnimations:@"animateContent" context:nil];
         [UIView setAnimationDelay:2];
         [UIView setAnimationDuration:2];
