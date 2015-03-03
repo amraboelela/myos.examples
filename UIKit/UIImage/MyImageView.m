@@ -14,7 +14,6 @@
 
 - (id)initWithFrame:(CGRect)theFrame
 {
-    //DLog();
     self = [super initWithFrame:theFrame];
     if (self) {
         self.backgroundColor = [UIColor greenColor];
@@ -42,19 +41,17 @@
         [singleTap requireGestureRecognizerToFail:panGesture];
         [doubleTap requireGestureRecognizerToFail:panGesture];
 
-        //self.superview.alpha = 0.0;
-        //self.alpha = 0.0;
+        self.superview.alpha = 0.0;
+        self.alpha = 0.0;
         self.imageView.alpha = 0.0;
         [UIView beginAnimations:@"animateOpacity" context:nil];
         [UIView setAnimationDuration:2];
         [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-        //self.superview.alpha = 1.0;
-        //self.alpha = 1;
+        self.superview.alpha = 1.0;
+        self.alpha = 1;
         self.imageView.alpha = 1;
-        //DLog();
         [UIView commitAnimations];
-        DLog();
-        return self;
+
         [UIView beginAnimations:@"animateContent" context:nil];
         [UIView setAnimationDelay:2];
         [UIView setAnimationDuration:2];
@@ -62,7 +59,7 @@
         self.imageView.image = [UIImage imageNamed:@"sunglass.png"];
         //self.imageView.image = [UIImage imageNamed:@"cuckoo.png"];
         [UIView commitAnimations];
-        DLog();
+        //DLog();
     }
     return self;
 }
