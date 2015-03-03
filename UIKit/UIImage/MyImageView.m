@@ -14,6 +14,7 @@
 
 - (id)initWithFrame:(CGRect)theFrame
 {
+    //DLog();
     self = [super initWithFrame:theFrame];
     if (self) {
         self.backgroundColor = [UIColor greenColor];
@@ -50,7 +51,7 @@
         //self.superview.alpha = 1.0;
         //self.alpha = 1;
         self.imageView.alpha = 1;
-        DLog();
+        //DLog();
         [UIView commitAnimations];
         DLog();
         return self;

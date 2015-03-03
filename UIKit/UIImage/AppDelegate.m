@@ -14,25 +14,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    DLog();
+    //DLog();
     CGRect frame = [[UIScreen mainScreen] bounds];
-    DLog();
+    //DLog();
     self.window = [[[UIWindow alloc] initWithFrame:frame] autorelease];
-    DLog();
+    //DLog();
     window.backgroundColor = [UIColor brownColor];
-    DLog();
+    //DLog();
     float width = kParentFrameSize;
-    DLog();
+    //DLog();
     float height = kParentFrameSize;
-    DLog();
+    //DLog();
     float x = (frame.size.width - width) / 2.0;
     float y = (frame.size.height - height) / 2.0;
     MyImageView *imageView = [[[MyImageView alloc] initWithFrame:CGRectMake(x,y,width,height)] autorelease];
-    DLog();
+    //DLog();
     [window addSubview:imageView];
-    DLog();
+    //DLog();
     [window makeKeyAndVisible];
-    DLog();
+    //DLog();
     return YES;
 }
 
