@@ -41,14 +41,14 @@
         [singleTap requireGestureRecognizerToFail:panGesture];
         [doubleTap requireGestureRecognizerToFail:panGesture];
 
-        self.superview.alpha = 0.0;
-        self.alpha = 0.0;
+        //self.superview.alpha = 0.0;
+        //self.alpha = 0.0;
         self.imageView.alpha = 0.0;
         [UIView beginAnimations:@"animateOpacity" context:nil];
         [UIView setAnimationDuration:2];
         [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-        self.superview.alpha = 1.0;
-        self.alpha = 1;
+        //self.superview.alpha = 1.0;
+        //self.alpha = 1;
         self.imageView.alpha = 1;
         [UIView commitAnimations];
 
