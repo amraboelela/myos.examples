@@ -27,13 +27,12 @@
         UITapGestureRecognizer *singleTap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapped:)] autorelease];
         [self addGestureRecognizer:singleTap];
 
-        //DLog();
+        //NSLog(@"Test");
         // Double tap gesture
         UITapGestureRecognizer *doubleTap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapped:)] autorelease];
         doubleTap.numberOfTapsRequired = 2;
         [self addGestureRecognizer:doubleTap];
         [singleTap requireGestureRecognizerToFail:doubleTap];
-        //DLog();
 
         // Pan gesture
         UIPanGestureRecognizer *panGesture = [[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panMoved:)] autorelease];
@@ -41,17 +40,19 @@
         [singleTap requireGestureRecognizerToFail:panGesture];
         [doubleTap requireGestureRecognizerToFail:panGesture];
 
-        //self.superview.alpha = 0.0;
-        //self.alpha = 0.0;
+        //DLog();
+        self.superview.alpha = 0.0;
+        self.alpha = 0.0;
         self.imageView.alpha = 0.0;
         [UIView beginAnimations:@"animateOpacity" context:nil];
         [UIView setAnimationDuration:2];
         [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-        //self.superview.alpha = 1.0;
-        //self.alpha = 1;
+        self.superview.alpha = 1.0;
+        self.alpha = 1;
         self.imageView.alpha = 1;
         [UIView commitAnimations];
 
+        //DLog();
         [UIView beginAnimations:@"animateContent" context:nil];
         [UIView setAnimationDelay:2];
         [UIView setAnimationDuration:2];
