@@ -136,7 +136,7 @@
         //imageView.center = pointInView;
         //firstY = imageView.center.y;
         previousTimestamp = CACurrentMediaTime();
-        DLog(@"firstImageLocation: %@", NSStringFromCGPoint(firstImageLocation));
+        //DLog(@"firstImageLocation: %@", NSStringFromCGPoint(firstImageLocation));
         //imageView.layer.anchorPoint = CGPointMake(pointInImage.x/imageView.bounds.size.width, 1-pointInImage.y/imageView.bounds.size.height);
     } /*else if (gesture.state == UIGestureRecognizerStateEnded) {
         imageView.center = CGPointMake(pointInView.x, pointInView.y);
