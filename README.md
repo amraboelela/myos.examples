@@ -5,4 +5,4 @@
   * [myos.sdk](https://github.com/amraboelela/myos.sdk)
         
 * For more info:
-[myos.frameworks.wiki](https://github.com/amraboelela/myos.frameworks/wiki)
+[myos.wiki](https://github.com/amraboelela/myos/wiki)
