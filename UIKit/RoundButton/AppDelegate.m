@@ -38,7 +38,7 @@
     [window addSubview:buttonView];
     //DLog(@"buttonView: %@", buttonView);
     [window makeKeyAndVisible];
-
+    //DLog();
     return YES;
 }
 
