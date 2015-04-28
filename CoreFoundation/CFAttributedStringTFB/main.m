@@ -66,7 +66,7 @@ int main (int argc, const char * argv[])
      
      */
     CFAttributedStringRef aStr;
-    CFMutableDictionaryRef attr = CFDictionaryCreateMutable (NULL,16,NULL,NULL);
+    CFMutableDictionaryRef attr = CFDictionaryCreateMutable(NULL, 16, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);//CFDictionaryCreateMutable (NULL,16,NULL,NULL);
     CFStringRef key1 =  CFStringCreateWithCString(NULL, "key1", NULL);
     CFStringRef value1 = CFStringCreateWithCString(NULL, "value1", NULL);
     CFDictionaryAddValue(attr,key1,value1);
