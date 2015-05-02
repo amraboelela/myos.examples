@@ -42,6 +42,7 @@ int main (int argc, const char * argv[])
     }
     
     NSLog(@"here");
+    [pool release];
     
     return 0;
 }
