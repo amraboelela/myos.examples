@@ -8,7 +8,7 @@ int main (int argc, const char * argv[])
     NSAutoreleasePool *pool;
     pool = [NSAutoreleasePool new];
     
-    NSString *nsStr = @"Amr aboela";
+    NSString *nsStr = @"Amr aboelela";
     CFIndex length = CFStringGetLength((CFStringRef)nsStr);
     
     NSLog(@"Cast from Foundation to Core Foundation");
@@ -20,12 +20,16 @@ int main (int argc, const char * argv[])
     } else {
         NSLog(@"False");
     }
-    NSLog(@"length(Amr aboela) = %d\n", length);
+    NSLog(@"length(Amr aboelela) = %d\n", length);
     NSLog(@"Cast from Foundation to Core Foundation");
-    char strArr[] = {'a','m','r',' ','a','b','o','e','l','a','\0'};
-    CFStringRef cfstr = CFStringCreateWithCString(NULL,strArr,kCFStringEncodingUTF8);
-    nsStr = (NSString*)cfstr;
-    NSLog(@"length(Amr aboela)array = %d\n", [nsStr length]);
-    
+    char cStr[] = {'A','m','r',' ','a','b','o','e','l','e','l','a','\0'};
+    //char strArr[] = {'a','m','r',' ','a','b','o','e','l','a','\0'};
+    //char *cStr = "b";
+    CFStringRef cfStr = CFStringCreateWithCString(NULL, cStr, kCFStringEncodingUTF8);
+    NSString *nscfStr = (NSString *)cfStr;
+    NSLog(@"length(Amr aboelela)array = %d\n", [nscfStr length]);
+    NSLog(@"isEqualToString: %@\n", [nsStr isEqualToString:cfStr] ? @"YES" : @"NO");
+    NSLog(@"CFStringCompare: %@\n", CFStringCompare(cfStr, nsStr, 0) == 0 ? @"YES" : @"NO");
+    [pool release];    
     return 0;
 }
