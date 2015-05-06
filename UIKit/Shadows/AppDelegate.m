@@ -35,7 +35,7 @@
     float y = (frame.size.height - height) / 2.0;
     ShadowsView *shadows = [[[ShadowsView alloc] initWithFrame:CGRectMake(x,y,width,height)] autorelease];
     [window addSubview:shadows];
-    DLog(@"shadows: %@", shadows);
+    //DLog(@"shadows: %@", shadows);
     [window makeKeyAndVisible];
 
     return YES;

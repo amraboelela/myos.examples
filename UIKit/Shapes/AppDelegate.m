@@ -36,7 +36,7 @@
     ShapesView *shapes = [[[ShapesView alloc] initWithFrame:CGRectMake(x,y,width,height)] autorelease];
     shapes.contentScaleFactor = [[UIScreen mainScreen] scale];
     [window addSubview:shapes];
-    DLog(@"shapes: %@", shapes);
+    //DLog(@"shapes: %@", shapes);
     [window makeKeyAndVisible];
 
     return YES;
