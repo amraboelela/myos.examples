@@ -20,7 +20,7 @@
 @class AppleController;
 
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
+    UIWindow *_window;
     AppleController *appleController;
 }
 
@@ -28,4 +28,3 @@
 @property (nonatomic, retain) AppleController *appleController;
 
 @end
-
