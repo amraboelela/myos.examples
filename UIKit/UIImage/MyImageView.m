@@ -1,6 +1,7 @@
 
 #import "MyImageView.h"
 #import "AppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define kImageSize           125
 #define kSmallValue          0.0001
