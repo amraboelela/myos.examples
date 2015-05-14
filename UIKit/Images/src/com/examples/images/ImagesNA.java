@@ -10,7 +10,7 @@ public class ImagesNA extends android.app.NativeActivity {
         System.loadLibrary("NACoreText");
         System.loadLibrary("NAIOKit");
         System.loadLibrary("NAOpenGLES");
-        System.loadLibrary("NACoreAnimation");
+        System.loadLibrary("NAQuartzCore");
         System.loadLibrary("NAUIKit");
         System.loadLibrary("Images");
     }

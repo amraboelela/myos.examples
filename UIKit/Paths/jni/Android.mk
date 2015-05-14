@@ -35,8 +35,8 @@ LOCAL_SRC_FILES := $(MYOS_PATH)/android/frameworks/libs/libNAOpenGLES.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := NACoreAnimation
-LOCAL_SRC_FILES := $(MYOS_PATH)/android/frameworks/libs/libNACoreAnimation.so
+LOCAL_MODULE := NAQuartzCore
+LOCAL_SRC_FILES := $(MYOS_PATH)/android/frameworks/libs/libNAQuartzCore.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
