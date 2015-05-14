@@ -69,11 +69,11 @@ int main (int argc, const char * argv[])
     
     CFIndex xx = 5;
     
-    if(CFDictionaryContainsKey(attributes,&xx))
+    if (CFDictionaryContainsKey(attributes,&xx)) {
         NSLog(@"YSSSSS");
-    else
+    } else {
         NSLog(@"NOOOOOOOOOOOOOO");
-    
+    }
     /*
      xx = CFDictionaryGetCount(attributes);
      CFDictionaryRef cp  =CFDictionaryCreateCopy (NULL,attributes);
@@ -86,17 +86,17 @@ int main (int argc, const char * argv[])
     CFMutableDictionaryRef attr = CFDictionaryCreateMutable(NULL, 16, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);//CFDictionaryCreateMutable (NULL,16,NULL,NULL);
     CFStringRef key1 =  CFStringCreateWithCString(NULL, "key1", NULL);
     CFStringRef value1 = CFStringCreateWithCString(NULL, "value1", NULL);
-    CFDictionaryAddValue(attr,key1,value1);
+    CFDictionaryAddValue(attr, key1, value1);
     CFStringRef str =  CFStringCreateWithCString(NULL, "The attributed string", NULL);
     
     NSLog(@"-------Check Creation-------");
     
     aStr = CFAttributedStringCreate(NULL,str ,attr);
-    if(aStr)
-        NSLog(@"Creadted successed");
-    else
-        NSLog(@"Creadted Failed");
-    
+    if (aStr) {
+        NSLog(@"Create successed");
+    } else {
+
+    }
     NSLog(@"-------Check Copy-------");
     
     CFAttributedStringRef aStrCopy = CFAttributedStringCreateCopy(NULL,aStr);
@@ -151,6 +151,7 @@ int main (int argc, const char * argv[])
     CFRange r2 = CFRangeMake(0,3);
     CFAttributedStringRef cfattr2 = CFAttributedStringCreateWithSubstring (NULL,aStr,r2);
     CFStringRef expectedSub =  CFStringCreateWithCString(NULL, "The", NULL);
+    //NSLog(@"cfattr2: %@", cfattr2);
     if(CFEqual(CFAttributedStringGetString(cfattr2),expectedSub))
         NSLog(@"Created with right subString");
     else
@@ -161,112 +162,116 @@ int main (int argc, const char * argv[])
     NSLog(@"-------Test Mutable AttributedString -------");
     
     NSLog(@"-------Test Create Mutable AttributedString -------");
-    CFMutableAttributedStringRef maStr = CFAttributedStringCreateMutable (NULL,0);
+    CFMutableAttributedStringRef maStr = CFAttributedStringCreateMutable(NULL, 0);
+    NSLog(@"maStr: %@", maStr);
     CFMutableStringRef mutableString = CFAttributedStringGetMutableString(maStr);
-    NSLog(@"Created with length = %d",CFStringGetLength(mutableString));
-    CFStringAppend (mutableString,key1); // appending on string
+    //NSLog(@"mutableString: %@", mutableString);
+    NSLog(@"Created with length = %d", CFStringGetLength(mutableString));
+    CFStringAppend(mutableString, key1); // appending on string
+    //NSLog(@"key1: %@", key1);
+    //NSLog(@"mutableString: %@", mutableString);
     CFMutableStringRef mutableString2 = CFAttributedStringGetMutableString(maStr);
+    //NSLog(@"mutableString2: %@", mutableString2);
     NSLog(@"---------------------Edit String-------------------------");
     
-    NSLog(@"String after editing with length = %d",CFStringGetLength(mutableString));
+    NSLog(@"String after editing with length = %d", CFStringGetLength(mutableString));
     
     r.location = 0;
     r.length = 0;
-    CFAttributedStringReplaceAttributedString (maStr,r,aStr);
+    NSLog(@"maStr: %@", maStr);
+    NSLog(@"aStr: %@", aStr);
+    CFAttributedStringReplaceAttributedString(maStr, r, aStr);
+    NSLog(@"maStr: %@", maStr);
     
     NSLog(@"-------Check getAttribute After replacement-------");
     
     
     r = CFRangeMake(0,0);
-    getString = (CFStringRef) CFAttributedStringGetAttribute(maStr,1,key1,&r);
+    getString = (CFStringRef)CFAttributedStringGetAttribute(maStr, 1, key1, &r);
     
-    NSLog(@"value original = %s ",getString);
-    
-    NSLog(@"String after replacement length = %d",CFStringGetLength(CFAttributedStringGetMutableString(maStr)));
+    NSLog(@"value = %@ ", getString);
+    NSLog(@"String after replacement length = %d", CFStringGetLength(CFAttributedStringGetMutableString(maStr)));
     NSLog(@"-------Check Effective Range-------");
-    NSLog(@"effective range = %d ",r.length);
+    NSLog(@"effective range = %d ", r.length);
     
     NSLog(@"-------Remove Attribute-------");
     r = CFRangeMake(0,1);
-    CFAttributedStringRemoveAttribute ( maStr, r,key1);
-    
+    CFAttributedStringRemoveAttribute(maStr, r, key1);
+    NSLog(@"maStr: %@", maStr);
     r = CFRangeMake(0,0);
-    getString = (CFStringRef) CFAttributedStringGetAttribute(maStr,0,key1,&r);
+    CFTypeRef aValue = CFAttributedStringGetAttribute(maStr, 0, key1, &r);
+    NSLog(@"value of key1 at 0 = %@ ", aValue);
+    NSLog(@"effective range after remove Attribute = {%d,%d} ", r.location, r.length);
     
-    NSLog(@"effective range after remove Attribute = %d ",r.length);
-    
-    getString = (CFStringRef) CFAttributedStringGetAttribute(maStr,1,key1,&r);
-    
-    NSLog(@"effective range of next character after remove Attribute = %d ",r.length);
-    
+    aValue = CFAttributedStringGetAttribute(maStr, 1, key1, &r);
+    NSLog(@"value of key1 at 1= %@ ", aValue);
+    NSLog(@"effective range of next character after remove Attribute = {%d,%d} ", r.location, r.length);
     NSLog(@"******************************Finished Core Foundation Test*****************************");
-    
-    
-    
-    NSLog(@"******************************Begin Tool-Free-Bridging Foundation Test*****************************");
-    NSAttributedString * nsaStr = (NSAttributedString*)aStr;
-    
-    NSDictionary * nsattr = [nsaStr attributesAtIndex:0 effectiveRange:nil];
-    NSLog([nsattr objectForKey:@"key1"]);
-    NSLog([nsaStr string]);
-    NSLog(@"length = %d",[nsaStr length]);
+    NSLog(@""); 
+    NSLog(@""); 
+    NSLog(@"*************************Begin Toll-Free-Bridging Foundation Test*****************************");
+    NSAttributedString *nsaStr = (NSAttributedString *)aStr;
+    NSLog(@"nsaStr: %@", nsaStr);
+    NSDictionary *nsattr = [nsaStr attributesAtIndex:0 effectiveRange:NULL];
+    NSLog(@"nsattr at 0: %@", nsattr);
+    NSLog(@"CFDictionaryGetValue(nsattr, key1): %@", CFDictionaryGetValue(nsattr, @"key1"));
+    NSLog(@"[nsattr objectForKey:key1]: %@", [nsattr objectForKey:@"key1"]);
+    NSLog(@"[nsaStr string]: %@", [nsaStr string]);
+    NSLog(@"[nsaStr length] = %d", [nsaStr length]);
     
     
     NSRange nsrange = NSMakeRange(3,4);
     NSRange nsrangeRef = NSMakeRange(0,0);
     nsattr = [nsaStr attributesAtIndex:2 longestEffectiveRange:&nsrangeRef inRange:nsrange];
-    NSLog([nsattr objectForKey:@"key1"]);
-    NSLog(@"effectiveRange = %d",nsrangeRef.location);
+    NSLog(@"nsattr at 2: %@", nsattr);
+    NSLog(@"[nsattr objectForKey:key1]: %@", [nsattr objectForKey:@"key1"]);
+    NSLog(@"longestEffectiveRange in {3,4}= {%d,%d}", nsrangeRef.location, nsrangeRef.length);
     nsrangeRef = NSMakeRange(0,0);
     nsattr = [nsaStr attributesAtIndex:2 effectiveRange:&nsrangeRef];
-    NSLog(@"effectiveRang location = %d",nsrangeRef.location);
-    NSLog(@"effectiveRange length = %d",nsrangeRef.length);
+    NSLog(@"effectiveRange at 2= {%d,%d}", nsrangeRef.location, nsrangeRef.length);
     
-    NSAttributedString* subAttr = [nsaStr attributedSubstringFromRange:nsrange];
+    NSAttributedString *subAttr = [nsaStr attributedSubstringFromRange:nsrange];
     NSLog([subAttr string]);
-    NSLog(@"SUB Attributed length = %d",[subAttr length]);
+    NSLog(@"SUB Attributed length = %d", [subAttr length]);
     
-    NSMutableAttributedString* mutable = (NSMutableAttributedString*)maStr;
+    NSMutableAttributedString *mutable = (NSMutableAttributedString *)maStr;
     
+    NSLog(@"mutable: %@", mutable);
     NSLog([mutable string]);
-    NSLog(@"---- length = %d ----",[mutable length]);
-    
-    
+    NSLog(@"---- length = %d ----", [mutable length]);
     
     nsattr = [mutable attributesAtIndex:0 effectiveRange:nil];
     NSLog([nsattr objectForKey:@"key1"]);
-    
     
     nsrange = NSMakeRange(3,4);
     nsrangeRef = NSMakeRange(0,0);
     nsattr = [mutable attributesAtIndex:2 longestEffectiveRange:&nsrangeRef inRange:nsrange];
     NSLog([nsattr objectForKey:@"key1"]);
-    NSLog(@"effectiveRange = %d",nsrangeRef.location);
+    NSLog(@"effectiveRange in {3,4)= {%d,%d}", nsrangeRef.location, nsrangeRef.length);
     nsattr = [mutable attributesAtIndex:2 effectiveRange:&nsrangeRef];
-    NSLog(@"effectiveRang location = %d",nsrangeRef.location);
-    NSLog(@"effectiveRange length = %d",nsrangeRef.length);
+    NSLog(@"effectiveRange at 2= {%d,%d}", nsrangeRef.location, nsrangeRef.length);
     
     nsrange = NSMakeRange(0,3);
     [mutable replaceCharactersInRange:nsrange withString:@"Mohamed"];
+    NSLog(@"mutable: %@", mutable);
     NSLog([mutable string]);
-    NSLog(@"replaced Attributed length = %d",[mutable length]);
+    NSLog(@"replaced Attributed length = %d", [mutable length]);
     
     
     NSLog(@"^^^^^^^^^^^^^^set Attributes^^^^^^^^^^^^^^^^^^^^^^");
     
-    nsattr = [[NSDictionary alloc] initWithObjectsAndKeys:
-              @"val10", @"key10", nil]; //nil to signify end of objects and keys.
+    nsattr = [[NSDictionary alloc] initWithObjectsAndKeys:@"val10", @"key10", nil]; //nil to signify end of objects and keys.
     
     nsrange = NSMakeRange(0,1);
-    [ mutable setAttributes: nsattr range:nsrange];
+    [mutable setAttributes:nsattr range:nsrange];
+    NSLog(@"mutable: %@", mutable);
     
     nsattr = [mutable attributesAtIndex:0 longestEffectiveRange:&nsrangeRef inRange:nsrange];
-    NSLog([nsattr objectForKey:@"key10"]);
-    NSLog([nsattr objectForKey:@"key1"]);
+    NSLog(@"[nsattr objectForKey:key10]: %@", [nsattr objectForKey:@"key10"]);
+    NSLog(@"[nsattr objectForKey:key1]: %@", [nsattr objectForKey:@"key1"]);
     
     NSLog(@"-----check effective range-----------");
-    NSLog(@"effectiveRang location = %d",nsrangeRef.location);
-    NSLog(@"effectiveRange length = %d",nsrangeRef.length);
+    NSLog(@"longestEffectiveRange in {0,1}= {%d,%d}", nsrangeRef.location, nsrangeRef.length);
     
     NSLog(@"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     
@@ -274,16 +279,15 @@ int main (int argc, const char * argv[])
     NSLog([mutable string]);
     nsrange = NSMakeRange(0,7);
     
-    
     subAttr = [mutable attributedSubstringFromRange:nsrange];
     
-    NSLog([subAttr string]);
+    NSLog(@"subAttr: %@", subAttr);
     
-    NSLog(@"SUB Attributed length = %d",[subAttr length]);
+    NSLog(@"SUB Attributed length = %d", [subAttr length]);
     
     nsrange = NSMakeRange(0,1);
     nsattr = [subAttr attributesAtIndex:1 longestEffectiveRange:&nsrangeRef inRange:nsrange];
-    NSLog(@"lenght of attributes = %d",[nsattr count]);
+    NSLog(@"[nsattr count] = %d", [nsattr count]);
     
     NSLog([nsattr objectForKey:@"key1"]);
     NSLog([nsattr objectForKey:@"key10"]);
@@ -292,16 +296,18 @@ int main (int argc, const char * argv[])
     
     NSLog(@"^^^^^^^^^^^^^^^^  set Attributed String ^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^^^");
     
+    NSLog(@"mutable: %@", mutable);
+    NSLog(@"subAttr: %@", subAttr);
     nsattr = [mutable attributesAtIndex:3 effectiveRange:nil];
     NSLog([nsattr objectForKey:@"key1"]);
     nsattr = [mutable attributesAtIndex:0 effectiveRange:nil];
     NSLog([nsattr objectForKey:@"key10"]);
     
-    NSLog(@"after set");
-    
     [mutable setAttributedString:subAttr];
+    NSLog(@"after set");
+    NSLog(@"mutable: %@", mutable);
     NSLog([mutable string]);
-    NSLog(@"*****SUB Attributed length = %d****",[mutable length]);
+    NSLog(@"*****SUB Attributed length = %d****", [mutable length]);
     
     nsattr = [mutable attributesAtIndex:3 effectiveRange:nil];
     NSLog([nsattr objectForKey:@"key1"]);
@@ -315,25 +321,27 @@ int main (int argc, const char * argv[])
     NSLog(@"^^^^^^^^^^^^^^^^ test remove attributes ^^^^^^^^^^^^^^^^^^");
     
     nsattr = [mutable attributesAtIndex:0 effectiveRange:nil];
-    NSLog(@"lenght of attributes = %d",[nsattr count]);
+    NSLog(@"count of attributes = %d", [nsattr count]);
     NSLog([nsattr objectForKey:@"key1"]);
     NSLog([nsattr objectForKey:@"key10"]);
-    
     
     nsrange = NSMakeRange(0,2);
     [mutable removeAttribute:@"key10" range:nsrange];
     
     NSLog(@"After remove");
     nsattr = [mutable attributesAtIndex:0 effectiveRange:nil];
-    NSLog(@"lenght of attributes = %d",[nsattr count]);
+    NSLog(@"count of attributes = %d", [nsattr count]);
     NSLog([nsattr objectForKey:@"key1"]);
     NSLog(@"^^^^^^^^^^^^^^^^^^^^^^");
     
     
     NSLog(@"^^^^^^^ replaceCharactersInRange:withAttributedString: ^^^^^^^^");
-    nsrangeRef = NSMakeRange(0,3);
-    [ mutable  replaceCharactersInRange:nsrange withAttributedString:nsaStr];
+    nsrange = NSMakeRange(0,3);
+    NSLog(@"mutable: %@", mutable);
+    NSLog(@"nsaStr: %@", nsaStr);
+    [mutable  replaceCharactersInRange:nsrange withAttributedString:nsaStr];
     
+    NSLog(@"mutable: %@", mutable);
     nsattr = [mutable attributesAtIndex:2 longestEffectiveRange:&nsrangeRef inRange:nsrange];
     NSLog([nsattr objectForKey:@"key1"]);
     NSLog([mutable string]);
@@ -343,16 +351,24 @@ int main (int argc, const char * argv[])
     NSLog(@"^^^^^set attribute ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");		
     nsrange = NSMakeRange(4,3);
     [mutable addAttribute:@"key99" value:@"val99" range:nsrange];
+    NSLog(@"mutable: %@", mutable);
     
     nsattr = [mutable attributesAtIndex:5 longestEffectiveRange:&nsrangeRef inRange:nsrange];
-    NSLog([nsattr objectForKey:@"key99"]);
+    NSLog(@"nsattr at 5: %@", nsattr);
+    NSLog(@"[nsattr objectForKey:key99]: %@", [nsattr objectForKey:@"key99"]);
+    NSLog(@"[nsattr objectForKey:key1]: %@", [nsattr objectForKey:@"key1"]);
+    NSLog(@"[nsattr objectForKey:key10]: %@", [nsattr objectForKey:@"key10"]);
     NSLog(@"^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");	
     
+    NSLog(@"^^^^^Append Attributed String^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");		
+
     [mutable appendAttributedString:subAttr];
-    NSLog([mutable string]);
+    NSLog(@"mutable: %@", mutable);
     NSLog(@"len = %d",[mutable length]);
-    nsattr = [mutable attributesAtIndex:54 longestEffectiveRange:&nsrangeRef inRange:nsrange];
-    NSLog([nsattr objectForKey:@"key1"]);
+    nsattr = [mutable attributesAtIndex:27 longestEffectiveRange:&nsrangeRef inRange:nsrange];
+    NSLog(@"nsattr at 27: %@", nsattr);
+    NSLog(@"[nsattr objectForKey:key1]: %@", [nsattr objectForKey:@"key1"]);
+    NSLog(@"[nsattr objectForKey:key10]: %@", [nsattr objectForKey:@"key10"]);
     
     NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");		
     

@@ -28,26 +28,30 @@ int main (int argc, const char * argv[])
     NSValue *aValue1 = [NSNumber numberWithInteger:5];
     NSValue *aValue2 = [NSNumber numberWithInteger:10];
     NSValue *aValue3 = [NSNumber numberWithInteger:5];
-    
+
+    NSLog(@"aValue1: %p", aValue1);    
+    NSLog(@"aValue2: %p", aValue2);    
+    NSLog(@"aValue3: %p", aValue3);    
     mySet = [NSSet setWithObjects:aValue1, aValue2, aValue3, nil];
     
     for (id elem in mySet) {
         NSLog(@"%@", elem);
     }
     
-    CFSetRef cfset = (CFSetRef) mySet;
+    CFSetRef cfset = (CFSetRef)mySet;
     NSValue *x = [NSNumber numberWithInteger:5];
     if (CFSetContainsValue(cfset, x)) {
         NSLog(@"True");
     } else {
         NSLog(@"False");
     }
-    
+    //DLog(); 
     CFSetRef cfset2 = CFSetCreateCopy(NULL, cfset);
+    NSLog(@"cfset2: %@", cfset2);
     for (id elem in cfset2) {
         NSLog(@"%@", elem);
     }
-    NSLog(@"%d", CFSetGetCountOfValue(cfset2, x));
+    NSLog(@"CFSetGetCountOfValue cfset2, x: %d", CFSetGetCountOfValue(cfset2, x));
     
     int count = CFSetGetCount(cfset2);
     const void** values = malloc(count * sizeof(void *));
@@ -57,7 +61,7 @@ int main (int argc, const char * argv[])
         NSLog([NSString stringWithFormat:@"%@", values[i]]);
     }
     
-    const void* val = CFSetGetValue(cfset2, x);
+    const void *val = CFSetGetValue(cfset2, x);
     NSLog(@"%@", val);
     
     const void *value = malloc(sizeof(const void*));
@@ -135,8 +139,6 @@ int main (int argc, const char * argv[])
         NSLog(@"%@", aKey);
     }
     
-    
-    
     //Testing Fast Enumeration
     NSLog(@"testing Fast Enumeration ...");
     for(id elem in nsset) {
@@ -194,5 +196,6 @@ int main (int argc, const char * argv[])
     }
     
     NSLog(@"here");
+    [pool release];
     return 0;
 }
