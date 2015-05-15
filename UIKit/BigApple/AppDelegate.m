@@ -16,6 +16,7 @@
  */
 
 #import "AppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define kBigAppleFrame CGRectMake(100,150,256,256)
 

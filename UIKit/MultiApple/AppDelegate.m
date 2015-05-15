@@ -31,7 +31,7 @@
     
     // create and display the window
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    //_window.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     appleController.viewController.view.frame = [UIScreen mainScreen].applicationFrame;
     [_window addSubview:appleController.viewController.view];
     [_window makeKeyAndVisible];
