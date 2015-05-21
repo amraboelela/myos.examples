@@ -75,6 +75,7 @@
 
 - (void)appleMoveDidFinish
 {
+    //return;
     self.appleMoving = NO;
 
     if ([delegate respondsToSelector:@selector(myUiViewControllerDidFinishMovingApple:)]) {
@@ -86,66 +87,57 @@
 
 - (void)moveTheApple:(id)sender
 {
+    //if (self.appleMoving) {
+    //    return;
+    //}
     //DLog(@"moveTheApple:");
-    if ([delegate respondsToSelector:@selector(myUiViewControllerWillStartMovingApple:)]) {
-        [delegate myUiViewControllerWillStartMovingApple:self];
-    }
+    //if ([delegate respondsToSelector:@selector(myUiViewControllerWillStartMovingApple:)]) {
+    //    [delegate myUiViewControllerWillStartMovingApple:self];
+    //}
     
     [UIView beginAnimations:@"moveTheApple" context:nil];
-    [UIView setAnimationDuration:2];
+    [UIView setAnimationDuration:1.5];
     [UIView setAnimationDidStopSelector:@selector(appleMoveDidFinish)];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationBeginsFromCurrentState:YES];
+
     //DLog(@"moveTheApple: 2");
     //DLog(@"appleView.transform: %@", CGAffineTransformDescription(appleView.transform));
     
-    //appleView.frame = CGRectMake(0,0,156,156);
     CGFloat perspective = -1.0 / 500.0;
     CGFloat labelPerspective = -1.0 / 250.0;
     CATransform3D t;
-    if (CGAffineTransformIsIdentity(sillyButton.transform)) {
+    if (CGAffineTransformIsIdentity(appleView.transform)) {
         //DLog(@"CGAffineTransformIsIdentity");
-        t = CATransform3DIdentity;
         
+        t = CATransform3DIdentity;
         //Purple plane: Perform a rotation and then a translation
         t = CATransform3DRotate(t, 55.0f * M_PI / 180.0f, 0, 0, 1);
         t.m34 = perspective;
         //DLog(@"t.m34: %0.3f", t.m34);
-        //t = CATransform3DScale(t, 0.99, 1.0, 1.0);
         t = CATransform3DTranslate(t, 70, 400, 170);
         appleView.layer.transform = t;
-        //appleView.layer.zPosition = 150;
-        //appleView.layer.anchorPoint = CGPointMake(0,0.5);
         
+        //appleView.center = CGPointMake(100,300);
         t = CATransform3DIdentity;
         t = CATransform3DRotate(t, -35.0f * M_PI / 180.0f, 0, 1, 0);
         t.m34 = labelPerspective;
-        //sillyButton.titleLabel.layer.transform = t;
         sillyButton.layer.transform = t;
         sillyButton.layer.sublayerTransform = t;
         
-        //sillyButton.transform = CGAffineTransformMakeRotation(-70.0f * M_PI / 180.0f);
-        //sillyButton.layer.sublayerTransform = CATransform3DMakeRotation(- M_PI / 2.0, 0, 0, 1);
-        //sillyButton->_gradientLayer.transform = t;
-        //appleView.transform = CGAffineTransformMakeScale(0.5, 0.5);
         //DLog(@"appleView.transform: %@", CGAffineTransformDescription(appleView.transform));
-        //appleView.center = [self.view convertPoint:self.view.center toView:appleView.superview];
     } else {
         //DLog(@"not CGAffineTransformIsIdentity");
         
-         t = CATransform3DIdentity;
+        //appleView.center = CGPointMake(100,100);
+
+        t = CATransform3DIdentity;
         t.m34 = perspective;
         //DLog(@"t.m34: %0.3f", t.m34);
         appleView.layer.transform = t;
-        //appleView.layer.zPosition = 0;
-        //appleView.frame = CGRectMake(0,0,256,256);
-        //appleView.layer.anchorPoint = CGPointMake(0.5,0.5);
         
-        //sillyButton.transform = CGAffineTransformIdentity;
-        //sillyButton.layer.sublayerTransform = CATransform3DIdentity;
         t = CATransform3DIdentity;
         t.m34 = labelPerspective;
-        //sillyButton.titleLabel.layer.transform = t;
         sillyButton.layer.transform = t;
         sillyButton.layer.sublayerTransform = t;
     }

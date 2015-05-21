@@ -32,6 +32,7 @@
 
 - (void)dealloc
 {
+    //DLog();
     myUiViewController.delegate = nil;
     [myUiViewController	release], myUiViewController = nil;
     [navigationController release], navigationController = nil;
@@ -44,6 +45,7 @@
 - (UIViewController *)viewController
 {
     // override in subclass
+    //DLog();
     return navigationController;
 }
 
@@ -56,6 +58,7 @@
     /*if ([delegate respondsToSelector:@selector(appleControllerWillStartMovingApple:)]) {
         [delegate appleControllerWillStartMovingApple:self];
     }*/
+    //DLog();
     [myUiViewController.navigationItem.rightBarButtonItem setEnabled:NO];
 }
 
@@ -65,6 +68,7 @@
     /*if ([delegate respondsToSelector:@selector(appleControllerDidFinishMovingApple:)]) {
         [delegate appleControllerDidFinishMovingApple:self];
     }*/
+    //DLog();
     [myUiViewController.navigationItem.rightBarButtonItem setEnabled:YES];
 }
 
@@ -73,12 +77,15 @@
 // pass actions and state queries to the view controller
 - (BOOL)canMoveApple
 {
+    //DLog();
     return (![myUiViewController isAppleMoving]);
 }
 
 - (void)moveTheApple
 {
+    DLog();
     [myUiViewController moveTheApple:self];
+    //DLog();
 }
 
 @end
