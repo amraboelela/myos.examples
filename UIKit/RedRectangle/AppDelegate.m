@@ -16,49 +16,53 @@
  */
 
 #import "AppDelegate.h"
-#import "RRSolidView.h"
+#import "RectangleView.h"
 
 @implementation AppDelegate
 
-@synthesize window;
+@synthesize window=_window;
 
 #pragma mark - Life cycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    DLog();
+    //DLog(); 
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     //DLog(@"window: %@", window);
     self.window.backgroundColor = [UIColor brownColor];
-    //DLog(@"self.window.backgroundColor: %@", self.window.backgroundColor);
 
-    RRSolidView *solidView = [[[RRSolidView alloc] initWithFrame:CGRectMake(0, 40, 170, 150)] autorelease];
+    RectangleView *solidView = [[[RectangleView alloc] initWithFrame:CGRectMake(0, 40, 170, 150)] autorelease];
     //DLog(@"solidView: %@", solidView);
     //solidView.backgroundColor = [UIColor redColor];
-    [window addSubview:solidView];
+    [self.window addSubview:solidView];
     
-    //[NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(addSolidView:) userInfo:nil repeats:NO];
-    [window makeKeyAndVisible];
+    //[NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(addSolidView:) userInfo:nil repeats:NO];
+    [self.window makeKeyAndVisible];
     //DLog();
-//    RRSolidView* solidView2 = [[[RRSolidView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)] autorelease];
+//    RectangleView* solidView2 = [[[RectangleView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)] autorelease];
 //    [solidView addSubview:solidView2];
     return YES;
 }
 
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    //DLog();
+}
+
 - (void)dealloc
 {
-    [window release];
+    [_window release];
     [super dealloc];
 }
 
 #pragma mark - Delegates
-
+/*
 - (void)addSolidView:(NSTimer *)timer
 {
-    RRSolidView *solidView = [[[RRSolidView alloc] initWithFrame:CGRectMake(150, 230, 170, 150)] autorelease];
-    //DLog(@"solidView: %@", solidView);
+    RectangleView *solidView = [[[RectangleView alloc] initWithFrame:CGRectMake(150, 230, 100, 100)] autorelease];
+    DLog(@"solidView: %@", solidView);
     //solidView.backgroundColor = [UIColor redColor];
-    [window addSubview:solidView];
-}
+    [self.window addSubview:solidView];
+}*/
 
 @end
