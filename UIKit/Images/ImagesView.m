@@ -40,40 +40,55 @@ static CGImageRef png, jpeg, tiff;
 
 - (void)drawRect:(CGRect)rect
 {
-    DLog(@"rect: %@", NSStringFromCGRect(rect));
+    //DLog(@"rect: %@", NSStringFromCGRect(rect));
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-    
+//    CGContextScaleCTM(ctx, 2, 2);
+
+    //CGContextSetRGBFillColor(ctx, 0.4, 0.6, 1.0, 0.7);
+    //CGContextFillRect(ctx, rect);
+
+    // Draw a checkerboard
+ /*   CGContextSetRGBFillColor(ctx, 0.4, 0.4, 0.4, 1.0);
+    unsigned int x, y;
+    for (x=0; x<rect.size.width; x+=10) {
+        for (y=0; y<rect.size.height; y+=10) {
+            if (((x % 20) == 0) != ((y % 20) == 0)) {
+                CGContextFillRect(ctx,  CGRectMake(x, y, 10, 10));
+            }
+        }
+    }*/
     //if (nil == png) {
     CGDataProviderRef pngData = CGDataProviderCreateWithFilename("sunglass.png");
     //DLog(@"pngData: %@", pngData);
-    CGRect pngRect;
+    png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
+    //DLog(@"png: %@", png);
+    CGDataProviderRelease(pngData);
+    //}
+    //DLog(@"png: %@", png);
+    float width = 256;
+    float height = 256;
+    float xPosition = (rect.size.width - width)/2;
+    float yPosition = (rect.size.height - height)/2;
+    CGRect pngRect = CGRectMake(150,150,130,130);//rect.size.width,rect.size.height);
     CGContextSaveGState(ctx);
+    //CGContextConcatCTM(ctx, CGContextGetUserSpaceToDeviceSpaceTransform(ctx));
     CGContextTranslateCTM(ctx, 0, 300);
     CGContextScaleCTM(ctx, 1, -1.0);
-    if (pngData) {
-        png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
-        //DLog(@"png: %@", png);
-        CGDataProviderRelease(pngData);
-        pngRect = CGRectMake(150,150,130,130);//rect.size.width,rect.size.height);
-        //CGContextConcatCTM(ctx, CGContextGetUserSpaceToDeviceSpaceTransform(ctx));*/
-        CGContextDrawImage(ctx, pngRect, png);
-    }
+    CGContextDrawImage(ctx, pngRect, png);
+//    CGContextRestoreGState(ctx);
 
     pngData = CGDataProviderCreateWithFilename("eartharrow.png");
-    if (pngData) {
-        png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
-        CGDataProviderRelease(pngData);
-        pngRect = CGRectMake(10,0,250,250);
-        CGContextDrawImage(ctx, pngRect, png);
-    }
-    
+    png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
+    CGDataProviderRelease(pngData);
+    pngRect = CGRectMake(10,0,250,250);
+    CGContextDrawImage(ctx, pngRect, png);
+
     pngData = CGDataProviderCreateWithFilename("cuckoo.png");
-    if (pngData) {
-        png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
-        CGDataProviderRelease(pngData);
-        pngRect = CGRectMake(70,70,100,100);
-        CGContextDrawImage(ctx, pngRect, png);
-    }
+    png = CGImageCreateWithPNGDataProvider(pngData, NULL, YES, kCGRenderingIntentDefault);
+    CGDataProviderRelease(pngData);
+    pngRect = CGRectMake(70,70,100,100);
+    CGContextDrawImage(ctx, pngRect, png);
+ 
     CGContextRestoreGState(ctx);
  
     return;
