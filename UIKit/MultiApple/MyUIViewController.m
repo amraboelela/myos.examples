@@ -50,6 +50,12 @@
     sillyButton.frame = CGRectMake(70,400,200,50);
     self.sillyButton.backgroundColor = [UIColor whiteColor];
     self.sillyButton.layer.borderColor = [[UIColor grayColor] CGColor];
+    /*DLog(@"[UIScreen mainScreen].scale: %f", [UIScreen mainScreen].scale);
+    self.sillyButton.contentScaleFactor = [UIScreen mainScreen].scale;
+    for (UIView *view in [self.sillyButton subviews]) {
+        view.contentScaleFactor = [UIScreen mainScreen].scale;
+    }*/
+
     //DLog();
     //self.sillyButton.contentScaleFactor = 50;//[UIScreen mainScreen].scale;
     //sillyButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
