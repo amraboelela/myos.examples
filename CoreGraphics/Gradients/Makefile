@@ -8,7 +8,7 @@ endif
 CFLAGS=-DDEBUG -fblocks
 LDLIBS=-lCoreFoundation -lFoundation
 
-ifeq ($(TARGET),NativeApp)
+ifeq ($(APP_TYPE),NativeApp)
     LDLIBS+=-lNAIOKit -lNAUIKit -lNACoreGraphics
 else
     LDLIBS+=-lIOKit -lUIKit -lCoreGraphics

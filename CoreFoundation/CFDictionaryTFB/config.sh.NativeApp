@@ -18,4 +18,4 @@
 # Copy this file to config.sh When your target is NativeApp
 
 #This means it is not a ChildApp running from inside myApps
-export TARGET=NativeApp
+export APP_TYPE=NativeApp
