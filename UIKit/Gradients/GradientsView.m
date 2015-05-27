@@ -18,7 +18,12 @@
 #import "GradientsView.h"
 #import <time.h>
 #import <stdlib.h>
-#import <QuartzCore/CAGradientLayer-private.h>
+//#import <QuartzCore/CAGradientLayer-private.h>
+#import <QuartzCore/QuartzCore.h>
+
+#define _kStartBlueGradientColor    [UIColor colorWithRed:28.0/255. green:136.0/255. blue:252.0/255. alpha:1]
+#define _kMiddleBlueGradientColor   [UIColor colorWithRed:21.0/255. green:112.0/255. blue:246.0/255. alpha:1]
+#define _kEndBlueGradientColor      [UIColor colorWithRed:12.0/255. green:89.0/255. blue:240.0/255. alpha:1]
 
 #define kStartGreenGradientColor    [UIColor colorWithRed:20.0/255. green:152.0/255. blue:36.0/255. alpha:0.0]
 #define kMiddleGreenGradientColor   [UIColor colorWithRed:10.0/255. green:96.0/255. blue:12.0/255. alpha:0.5]
@@ -33,8 +38,8 @@
 
 @implementation GradientsView
 
-@synthesize gradientLayer;
-@synthesize timer;
+@synthesize gradientLayer=_gradientLayer;
+@synthesize timer=_timer;
 
 #pragma mark - Life cycle
 
@@ -42,28 +47,25 @@
 {
     self = [super initWithFrame:theFrame];
     if (self) {
-        //self.backgroundColor = [UIColor blueColor];
         self.layer.borderColor = [[UIColor whiteColor] CGColor];
         self.layer.borderWidth = 2;
         self.layer.cornerRadius = 10;
         self.opaque = NO;
-
         self.gradientLayer = [CAGradientLayer layer];
 
         // display gradienLayer
-        gradientLayer.frame = self.bounds;
-        gradientLayer.colors = [NSArray arrayWithObjects:(id)[_kStartBlueGradientColor CGColor],
+        self.gradientLayer.frame = self.bounds;
+        self.gradientLayer.colors = [NSArray arrayWithObjects:(id)[_kStartBlueGradientColor CGColor],
                                                          (id)[_kMiddleBlueGradientColor CGColor],
                                                          (id)[_kEndBlueGradientColor CGColor], nil];
-        gradientLayer.cornerRadius = 10;
-        gradientLayer.borderWidth = 2;
-        gradientLayer.borderColor = [[UIColor whiteColor] CGColor];
-//        gradientLayer.masksToBounds = YES;
+        self.gradientLayer.cornerRadius = 10;
+        self.gradientLayer.borderWidth = 2;
+        self.gradientLayer.borderColor = [[UIColor whiteColor] CGColor];
 
         long selfPointer = (long)self;
         //int r = selfPointer % 5 + 1;
         int r = (rand()/2 + selfPointer) % 3 + 2;
-        DLog(@"r: %d", r);
+        //DLog(@"r: %d", r);
         [NSTimer scheduledTimerWithTimeInterval:r target:self selector:@selector(selectView) userInfo:nil repeats:YES];
         NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:r+1];
         self.timer = [[[NSTimer alloc] initWithFireDate:fireDate
@@ -73,15 +75,15 @@
                                                userInfo:nil
                                                 repeats:YES] autorelease];
         NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-        [runLoop addTimer:timer forMode:NSDefaultRunLoopMode];
+        [runLoop addTimer:self.timer forMode:NSDefaultRunLoopMode];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [gradientLayer release];
-    [timer invalidate];
+    [_gradientLayer release];
+    [_timer invalidate];
     [super dealloc];
 }
 
@@ -89,7 +91,6 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    //DLog(@"rect: %@", NSStringFromCGRect(rect));
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGContextSaveGState(ctx);
 
@@ -97,11 +98,7 @@
                                                          (id)[kMiddleGreenGradientColor CGColor],
                                                          (id)[kEndGreenGradientColor CGColor], nil];
     CGFloat myRadius = 10;
-        //CGFloat borderWidth = 2;
-        //CGColorRef borderColor = [[UIColor whiteColor] CGColor];
 
-    // Clipping the view for the gradient
-    //CGFloat myRadius = 10;
     CGContextBeginPath(ctx);
     CGContextAddArc(ctx, rect.size.width - myRadius, myRadius, myRadius, PI*1.5, 0 , NO);
     CGContextAddArc(ctx, rect.size.width - myRadius, rect.size.height - myRadius, myRadius, 0, PI/2 , NO);
@@ -143,16 +140,13 @@
 {
     //DLog();
 //    DLog(@"memory usage: %lu page", CFGetMemoryUsage());
-    [self.layer insertSublayer:gradientLayer atIndex:0];
+    [self.layer insertSublayer:self.gradientLayer atIndex:0];
 }
 
 - (void)unselectView
 {
     //DLog();
-    [gradientLayer removeFromSuperlayer];
-    //int r = rand() % 3 + 1;
-    //[NSTimer scheduledTimerWithTimeInterval:r target:self selector:@selector(selectView) userInfo:nil repeats:NO];
-    //DLog(@"memory usage: %lu page", CFGetMemoryUsage());
+    [self.gradientLayer removeFromSuperlayer];
 }
  
 @end

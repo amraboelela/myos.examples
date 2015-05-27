@@ -19,8 +19,8 @@
 
 @interface GradientsView : UIView
 {
-    CAGradientLayer *gradientLayer;
-    NSTimer *timer;
+    CAGradientLayer *_gradientLayer;
+    NSTimer *_timer;
 }
 
 @property (nonatomic, retain) CAGradientLayer *gradientLayer;
