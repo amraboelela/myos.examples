@@ -15,5 +15,5 @@
 # Amr Aboelela <amraboelela@gmail.com>
 #
 
-source ${MYOS_PATH}/sdk/nativeApp-run.sh
+source ${MYOS_PATH}/sdk/run.sh
 ./EnvironmentVariables

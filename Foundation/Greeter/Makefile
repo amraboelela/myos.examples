@@ -1,8 +1,6 @@
 
 APP_NAME=Greeter
 
-#LDLIBS=-lgnustep-base
-#LDLIBS=-lCoreFoundation -lFoundation
 LDLIBS=-lFoundation
 
 OBJECTS = \

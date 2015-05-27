@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		F564A66419D0BF390069E9BB /* CoreAnimation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CoreAnimation; sourceTree = "<group>"; };
+		F51FCC731B153E8F00C182B0 /* QuartzCore */ = {isa = PBXFileReference; lastKnownFileType = folder; path = QuartzCore; sourceTree = "<group>"; };
 		F564A66619D0BF390069E9BB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		F564A66A19D0BF390069E9BB /* UIKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIKit; sourceTree = "<group>"; };
 		F5B716D81A82A6AF00DA002A /* c-tools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "c-tools"; sourceTree = "<group>"; };
@@ -20,8 +20,8 @@
 		F564A65D19D0BF060069E9BB = {
 			isa = PBXGroup;
 			children = (
+				F51FCC731B153E8F00C182B0 /* QuartzCore */,
 				F5B716D81A82A6AF00DA002A /* c-tools */,
-				F564A66419D0BF390069E9BB /* CoreAnimation */,
 				F5F835BA1A7F351000C52FC7 /* CoreFoundation */,
 				F5B716DA1A82A85800DA002A /* CoreGraphics */,
 				F5B716D91A82A6AF00DA002A /* Foundation */,

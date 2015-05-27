@@ -15,4 +15,4 @@
 # Amr Aboelela <amraboelela@gmail.com>
 #
 
-source ${MYOS_PATH}/sdk/nativeApp-build.sh
+source ${MYOS_PATH}/sdk/build.sh

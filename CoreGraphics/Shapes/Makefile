@@ -1,13 +1,35 @@
 
-APP_NAME=Shapes
+ifeq ($(BASE_OS),android)
+    LIB_NAME=Shapes
+else
+    APP_NAME=Shapes
+endif
 
-LDLIBS=-lCoreFoundation -lFoundation -lNAIOKit -lNACoreGraphics -lNAUIKit
+CFLAGS=-DDEBUG -fblocks
+LDLIBS=-lCoreFoundation -lFoundation
+
+ifeq ($(TARGET),NativeApp)
+    LDLIBS+=-lNAIOKit -lNAUIKit -lNACoreGraphics
+else
+    LDLIBS+=-lIOKit -lUIKit -lCoreGraphics
+endif
 
 OBJECTS = \
-    main.o \
     arcs.o \
     ovals.o \
     rects.o \
     shapes.o \
 
-include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-executable
+ifeq ($(BASE_OS),android)
+    LDLIBS+=-llog -landroid
+    OBJECTS+= \
+        rd_app_glue.o \
+        d_main.o \
+
+    include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-shared
+else
+    OBJECTS+= \
+        main.o \
+
+    include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-executable
+endif

@@ -6,12 +6,17 @@ else
 endif
 
 CFLAGS=-DDEBUG -fblocks
-LDLIBS=-lCoreFoundation -lFoundation -lNAOpenGLES -lNAUIKit -lNACoreGraphics
+LDLIBS=-lCoreFoundation -lFoundation
+
+ifeq ($(TARGET),NativeApp)
+    LDLIBS+=-lNAOpenGLES -lNAUIKit -lNACoreGraphics -lNAQuartzCore
+else
+    LDLIBS+=-lOpenGLES -lUIKit -lCoreGraphics -lQuartzCore
+endif
 
 OBJECTS = \
     AppDelegate.o \
     ShadowsView.o \
-    main.o \
 
 ifeq ($(BASE_OS),android)
     LDLIBS+=-llog -landroid
@@ -21,5 +26,8 @@ ifeq ($(BASE_OS),android)
 
     include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-shared
 else
+    OBJECTS+= \
+        main.o \
+
     include ${MYOS_PATH}/sdk/$(BASE_OS)/makefile-executable
 endif
