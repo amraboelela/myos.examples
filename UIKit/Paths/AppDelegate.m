@@ -20,7 +20,7 @@
 
 @implementation AppDelegate
 
-@synthesize window;
+@synthesize window=_window;
 
 #pragma mark - Life cycle
 
@@ -28,25 +28,26 @@
 {
     CGRect frame = [[UIScreen mainScreen] bounds];
     self.window = [[[UIWindow alloc] initWithFrame:frame] autorelease];
-    window.backgroundColor = [UIColor yellowColor];
+    _window.backgroundColor = [UIColor yellowColor];
     float width = 310;
     float height = 400;
     float x = (frame.size.width - width) / 2.0;
     float y = (frame.size.height - height) / 2.0;
     PathsView *paths = [[[PathsView alloc] initWithFrame:CGRectMake(x,y,width,height)] autorelease];
     paths.contentScaleFactor = [[UIScreen mainScreen] scale];
-    [window addSubview:paths];
+    [_window addSubview:paths];
     DLog(@"paths: %@", paths);
-    [window makeKeyAndVisible];
-
+    [_window makeKeyAndVisible];
+    
     return YES;
 }
 
 - (void)dealloc
 {
-    [window release];
+    [_window release];
     [super dealloc];
 }
 
-@end
+#pragma mark - Delegates
 
+@end

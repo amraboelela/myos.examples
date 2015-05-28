@@ -1,5 +1,6 @@
 
 #import "PathsView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation PathsView
 
