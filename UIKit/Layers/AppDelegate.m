@@ -42,12 +42,7 @@
 
     SmileyFaceView *smiley = [[[SmileyFaceView alloc] initWithFrame:CGRectMake(40,50,51,51)] autorelease];
     [blueView addSubview:smiley];
-/*
-    SmileyFaceView *subSmiley = [[[SmileyFaceView alloc] initWithFrame:CGRectMake(5,5,50,50)] autorelease];
-    [smiley addSubview:subSmiley];	
-    smiley = [[[SmileyFaceView alloc] initWithFrame:CGRectMake(5,5,50,50)] autorelease];
-    [subSmiley addSubview:smiley];
-*/
+
     DLog(@"smiley: %@", smiley);
     smiley = [[[SmileyFaceView alloc] initWithFrame:CGRectMake(230,40,50,50)] autorelease];
     [blueView addSubview:smiley];
@@ -59,32 +54,7 @@
     smiley = [[[SmileyFaceView alloc] initWithFrame:CGRectMake(160,165,50,50)] autorelease];
     [blueView addSubview:smiley];
 
-/*
-    self.layers = [[Layers alloc] initWithContext:context andBorder:frame];
-    DLog(@"layers: %@", layers);
-    [layers fillBorder];
-    [layers draw2];
-    [layers draw];
-    [layers draw2];*/
-
     return YES;
-
-/*
-    self.window = [[[UIWindow alloc] initWithFrame:CGRectMake(10, 10, 100, 150)] autorelease];
-    UITextField* display = [[[UITextField alloc] initWithFrame:CGRectMake(10, 20, 70, 30)] autorelease];
-//        [display setEditable: NO];
-    [display setBackgroundColor:[UIColor blueColor]];
-    //[display setDrawsBackground: YES];
-//        [display setAlignment: NSRightTextAlignment];
-
-    display.text = @"Red Rectangle";
-    [window addSubview: display];
-
-    RRSolidView* solidView = [[[RRSolidView alloc] initWithFrame:CGRectMake(20, 70, 200, 100)] autorelease];
-    [window addSubview:solidView];
-
-    [window makeKeyAndVisible];*/
-
 }
 
 - (void)dealloc
@@ -94,8 +64,6 @@
     [blueView release];
     [super dealloc];
 }
-
-#pragma mark - Notifications
 
 @end
 

@@ -19,13 +19,13 @@
 #import "BlueView.h"
 
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow* window;
-    Layers* layers;
-    BlueView* blueView;
+    UIWindow *window;
+    Layers *layers;
+    BlueView *blueView;
 }
 
-@property (nonatomic, retain) UIWindow* window;
-@property (nonatomic, retain) Layers* layers;
-@property (nonatomic, retain) BlueView* blueView;
+@property (nonatomic, retain) UIWindow *window;
+@property (nonatomic, retain) Layers *layers;
+@property (nonatomic, retain) BlueView *blueView;
 
 @end
