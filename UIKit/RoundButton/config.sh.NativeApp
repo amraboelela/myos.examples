@@ -19,3 +19,5 @@
 
 #This means it is not a ChildApp running from inside myApps
 export APP_TYPE=NativeApp
+
+export DEBUG_MODE=YES
