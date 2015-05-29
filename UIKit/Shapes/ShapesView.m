@@ -45,7 +45,7 @@ void strokeRoundedRect(CGContextRef context, CGRect rect, CGFloat ovalWidth, CGF
 {
 
 
-    //DLog(@"rect: %@", NSStringFromCGRect(rect));
+    DLog(@"rect: %@", NSStringFromCGRect(rect));
     CGContextRef ctx = UIGraphicsGetCurrentContext();
 
         CGRect bounds = rect;
