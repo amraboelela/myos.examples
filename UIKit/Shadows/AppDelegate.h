@@ -18,8 +18,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow* window;
+    UIWindow *_window;
 }
 
-@property (nonatomic, retain) UIWindow* window;
+@property (nonatomic, retain) UIWindow *window;
+
 @end

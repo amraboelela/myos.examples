@@ -20,7 +20,7 @@
 
 @implementation AppDelegate
 
-@synthesize window;
+@synthesize window=_window;
 
 #pragma mark - Life cycle
 
@@ -28,24 +28,24 @@
 {
     CGRect frame = [[UIScreen mainScreen] bounds];
     self.window = [[[UIWindow alloc] initWithFrame:frame] autorelease];
-    window.backgroundColor = [UIColor yellowColor];
+    self.window.backgroundColor = [UIColor yellowColor];
     float width = 310;
     float height = 400;
     float x = (frame.size.width - width) / 2.0;
     float y = (frame.size.height - height) / 2.0;
     ShadowsView *shadows = [[[ShadowsView alloc] initWithFrame:CGRectMake(x,y,width,height)] autorelease];
-    [window addSubview:shadows];
-    //DLog(@"shadows: %@", shadows);
-    [window makeKeyAndVisible];
-
+    [self.window addSubview:shadows];
+    DLog(@"shadows: %@", shadows);
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
 - (void)dealloc
 {
-    [window release];
+    [_window release];
     [super dealloc];
 }
 
-@end
+#pragma mark - Delegates
 
+@end

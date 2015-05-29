@@ -43,7 +43,7 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    //DLog(@"rect: %@", NSStringFromCGRect(rect));
+    DLog(@"rect: %@", NSStringFromCGRect(rect));
     CGContextRef ctx = UIGraphicsGetCurrentContext();
 
     CGContextSetRGBFillColor(ctx, 0, 0, 1, 0.5);
