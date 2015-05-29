@@ -1,5 +1,5 @@
 /*
- Copyright © 2015 myOS Group.
+ Copyright © 2014 myOS Group.
  
  This application is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
@@ -16,10 +16,11 @@
  */
 
 #import "AppDelegate.h"
+//#import "TemplateView.h"
 
 @implementation AppDelegate
 
-@synthesize window;
+@synthesize window=_window;
 
 #pragma mark - Life cycle
 
@@ -27,7 +28,7 @@
 {
     CGRect frame = [[UIScreen mainScreen] bounds];
     self.window = [[[UIWindow alloc] initWithFrame:frame] autorelease];
-    window.backgroundColor = [UIColor yellowColor];
+    self.window.backgroundColor = [UIColor yellowColor];
     UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(10,40,160,30)] autorelease];
     //label.contentScaleFactor = [[UIScreen mainScreen] scale];
     label.text = @"Test text drawing 12";
@@ -35,37 +36,37 @@
     label.backgroundColor = [UIColor whiteColor];
     label.textAlignment = UITextAlignmentCenter;
     label.font = [UIFont boldSystemFontOfSize:12];
-    [window addSubview:label];
-
+    [self.window addSubview:label];
+    
     label = [[[UILabel alloc] initWithFrame:CGRectMake(10,80,160,30)] autorelease];
     label.text = @"Test text drawing 20";
     label.textColor = [UIColor blueColor];
     label.backgroundColor = [UIColor redColor];
     label.textAlignment = UITextAlignmentRight;
     label.font = [UIFont boldSystemFontOfSize:18];
-    [window addSubview:label];
-
+    [self.window addSubview:label];
+    
     label = [[[UILabel alloc] initWithFrame:CGRectMake(10,120,160,30)] autorelease];
     //label.contentScaleFactor = [[UIScreen mainScreen] scale];
     label.text = @"Test text drawing 20";
     label.textAlignment = UITextAlignmentLeft;
     label.font = [UIFont systemFontOfSize:16];
-    [window addSubview:label];
-/*
-    label = [[[UILabel alloc] initWithFrame:CGRectMake(10,160,160,30)] autorelease];
-    //label.contentScaleFactor = [[UIScreen mainScreen] scale];
-    label.text = @"Test text drawing 20";
-    label.textAlignment = UITextAlignmentLeft;
-    label.font = [UIFont systemFontOfSize:16];
-    [window addSubview:label];*/
+    [self.window addSubview:label];
+    /*
+     label = [[[UILabel alloc] initWithFrame:CGRectMake(10,160,160,30)] autorelease];
+     //label.contentScaleFactor = [[UIScreen mainScreen] scale];
+     label.text = @"Test text drawing 20";
+     label.textAlignment = UITextAlignmentLeft;
+     label.font = [UIFont systemFontOfSize:16];
+     [window addSubview:label];*/
     
     label = [[[UILabel alloc] initWithFrame:CGRectMake(180,40,130,30)] autorelease];
     label.text = @"Test text drawing 12";
     label.backgroundColor = [UIColor greenColor];
     label.textColor = [UIColor redColor];
     label.lineBreakMode = UILineBreakModeMiddleTruncation;
-    [window addSubview:label];
-
+    [self.window addSubview:label];
+    
     label = [[[UILabel alloc] initWithFrame:CGRectMake(180,80,130,30)] autorelease];
     //label.contentScaleFactor = [[UIScreen mainScreen] scale];
     label.text = @"Test text drawing 20";
@@ -73,25 +74,25 @@
     label.backgroundColor = [UIColor grayColor];
     label.lineBreakMode = UILineBreakModeHeadTruncation;
     label.font = [UIFont systemFontOfSize:18];
-    [window addSubview:label];
-
+    [self.window addSubview:label];
+    
     label = [[[UILabel alloc] initWithFrame:CGRectMake(180,120,130,30)] autorelease];
     label.text = @"Test text drawing 20";
     label.backgroundColor = [UIColor brownColor];
     label.lineBreakMode = UILineBreakModeTailTruncation;
     label.font = [UIFont fontWithName:@"DejaVu Serif-Bold" size:18];
-    [window addSubview:label];
-
-    [window makeKeyAndVisible];
-
+    [self.window addSubview:label];
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
 - (void)dealloc
 {
-    [window release];
+    [_window release];
     [super dealloc];
 }
 
-@end
+#pragma mark - Delegates
 
+@end
