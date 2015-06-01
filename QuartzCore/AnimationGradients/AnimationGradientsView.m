@@ -18,7 +18,7 @@
 #import "AnimationGradientsView.h"
 //#import <time.h>
 #import <stdlib.h>
-#import <QuartzCore/CAGradientLayer-private.h>
+#import <QuartzCore/QuartzCore.h>
 
 #define kStartGreenGradientColor    [UIColor colorWithRed:20.0/255. green:152.0/255. blue:36.0/255. alpha:0.0]
 #define kMiddleGreenGradientColor   [UIColor colorWithRed:10.0/255. green:96.0/255. blue:12.0/255. alpha:0.5]
@@ -47,39 +47,6 @@
         self.layer.borderWidth = 2;
         self.layer.cornerRadius = 10;
         self.opaque = NO;
-
-/*
-        self.gradientLayer = [CAGradientLayer layer];
-
-        // display gradienLayer
-        gradientLayer.frame = self.bounds;
-        gradientLayer.colors = [NSArray arrayWithObjects:(id)[_kStartBlueGradientColor CGColor],
-                                                         (id)[_kMiddleBlueGradientColor CGColor],
-                                                         (id)[_kEndBlueGradientColor CGColor], nil];
-        gradientLayer.cornerRadius = 10;
-        gradientLayer.borderWidth = 2;
-        gradientLayer.borderColor = [[UIColor whiteColor] CGColor];
-*/
-/*
-        long selfPointer = (long)self;
-        int r = (rand()/2 + selfPointer) % 3 + 2;
-        //DLog(@"rand(): %f", rand());
-        DLog(@"r: %d", r);
-        [NSTimer scheduledTimerWithTimeInterval:r target:self selector:@selector(selectView) userInfo:nil repeats:YES];
-        NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:r+1];
-        self.timer = [[[NSTimer alloc] initWithFireDate:fireDate
-                                               interval:r
-                                                 target:self
-                                               selector:@selector(unselectView)
-                                               userInfo:nil
-                                                repeats:YES] autorelease];
-        NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-        [runLoop addTimer:timer forMode:NSDefaultRunLoopMode];
-       
-*/
-        //[NSTimer scheduledTimerWithTimeInterval:r target:self selector:@selector(selectView) userInfo:nil repeats:NO];
-//        [self selectView];
-//        [self unselectView];
     }
     return self;
 }
@@ -143,26 +110,6 @@
     CGGradientRelease(myGradient);
     CGContextRestoreGState(ctx);
 }
-/*
-- (void)selectView
-{
-    //DLog(@"");
-//    DLog(@"memory usage: %lu page", CFGetMemoryUsage());
-    [self.layer insertSublayer:gradientLayer atIndex:0];
-//    if (timer) {
-//        [timer invalidate];
-//    }
-//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1. target:self selector:@selector(unselectView) userInfo:nil repeats:NO];
-}
-
-- (void)unselectView
-{
-    //DLog();
-    [gradientLayer removeFromSuperlayer];
-    //int r = rand() % 3 + 1;
-    //[NSTimer scheduledTimerWithTimeInterval:r target:self selector:@selector(selectView) userInfo:nil repeats:NO];
-    //DLog(@"memory usage: %lu page", CFGetMemoryUsage());
-}*/
  
 @end
 
