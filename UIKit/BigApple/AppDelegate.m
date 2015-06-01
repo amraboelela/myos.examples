@@ -40,7 +40,7 @@
     self.appleView.frame = kBigAppleFrame;
     [window addSubview:appleView];
 
-    DLog(@"appleView: %@", appleView);
+    //DLog(@"appleView: %@", appleView);
     self.sillyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.sillyButton.frame = CGRectMake(70,420,200,50);
     
