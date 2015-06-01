@@ -20,7 +20,7 @@
 
 @implementation AppDelegate
 
-@synthesize window;
+@synthesize window=_window;
 
 #pragma mark - Life cycle
 
@@ -31,22 +31,21 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     //DLog(@"window: %@", window);
     //self.window.backgroundColor = [UIColor brownColor];
-
+    
     //RRSolidView *solidView = [[[RRSolidView alloc] initWithFrame:CGRectMake(0, 40, 170, 150)] autorelease];
     
     RedRectangleVC *rootVC = [[RedRectangleVC alloc] init];
-    [window addSubview:rootVC.view];
-    [window makeKeyAndVisible];
+    [self.window addSubview:rootVC.view];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
 - (void)dealloc
 {
-    [window release];
+    [_window release];
     [super dealloc];
 }
 
 #pragma mark - Delegates
 
 @end
-
