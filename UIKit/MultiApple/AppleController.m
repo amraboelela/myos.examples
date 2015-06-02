@@ -26,6 +26,7 @@
         myUiViewController.delegate = self;
         navigationController = [[UINavigationController alloc] initWithRootViewController:myUiViewController];
         myUiViewController.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Move" style:UIBarButtonItemStylePlain target:self action:@selector(moveTheApple)] autorelease];
+        //DLog(@"myUiViewController.navigationItem: %@", myUiViewController.navigationItem);
     }
     return self;
 }
@@ -83,7 +84,7 @@
 
 - (void)moveTheApple
 {
-    DLog();
+    //DLog();
     [myUiViewController moveTheApple:self];
     //DLog();
 }

@@ -26,11 +26,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
     // create the application controller
     appleController = [[AppleController alloc] init];
     
-    // create and display the window
-    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     //_window.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     appleController.viewController.view.frame = [UIScreen mainScreen].applicationFrame;
     [_window addSubview:appleController.viewController.view];
