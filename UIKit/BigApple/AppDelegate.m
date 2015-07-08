@@ -41,11 +41,13 @@
     [window addSubview:appleView];
 
     //DLog(@"appleView: %@", appleView);
-    self.sillyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.sillyButton.frame = CGRectMake(70,420,200,50);
+    self.sillyButton = [UIButton buttonWithType:UIButtonTypeSystem];//UIButtonTypeRoundedRect];
+    self.sillyButton.frame = CGRectMake(70,420,150,40);
     
     self.sillyButton.backgroundColor = [UIColor whiteColor];
     self.sillyButton.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.sillyButton.layer.cornerRadius = 7;
+    self.sillyButton.layer.masksToBounds = YES;
     
     [sillyButton setTitle:@"Click Me!" forState:UIControlStateNormal];
     [sillyButton addTarget:self action:@selector(moveTheApple:) forControlEvents:UIControlEventTouchUpInside];
