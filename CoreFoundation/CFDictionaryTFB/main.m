@@ -18,10 +18,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreFoundation/CoreFoundation.h>
 
-#import <CoreGraphics/StandardGlyphNames.h>
+//#import <CoreGraphics/StandardGlyphNames.h>
 
-extern const char * const StandardGlyphNames[258];
-extern const char * const StandardGlyphNamesKeys[258];
+//extern const char * const StandardGlyphNames[258];
+//extern const char * const StandardGlyphNamesKeys[258];
 
 int main (int argc, const char * argv[])
 {
@@ -29,7 +29,7 @@ int main (int argc, const char * argv[])
     NSAutoreleasePool *pool;
     pool = [NSAutoreleasePool new];
     
-    NSLog(@"test: %s", StandardGlyphNames[0]);
+    //NSLog(@"test: %s", StandardGlyphNames[0]);
     
     NSDictionary *myColors;
     
@@ -50,7 +50,7 @@ int main (int argc, const char * argv[])
     
     
     NSLog(@"%@", (id) CFDictionaryGetValue(dict, (const void*) @"hey2"));
-    NSLog(@"%@", CFDictionaryGetCount(dict));
+    NSLog(@"%d", CFDictionaryGetCount(dict));
     
     NSMutableDictionary* nsDict = dict;
     
