@@ -31,18 +31,20 @@
 	//return self;
         self.backgroundColor = [UIColor greenColor];
 
-        self.button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        self.button = [UIButton buttonWithType:UIButtonTypeSystem];
         self.button.frame = CGRectMake(50,50,150,70);
         self.button.backgroundColor = [UIColor whiteColor];
-        self.button.layer.borderColor = [[UIColor grayColor] CGColor];
+        self.button.layer.borderColor = [[UIColor colorWithRed:50.0/255.0 green:50.0/255.0 blue:200.0/255.0 alpha:1.0] CGColor];
+        self.button.layer.borderWidth = 1;
+        self.button.layer.cornerRadius = 7;
+        self.button.layer.masksToBounds = YES;
+        self.button.titleLabel.font = [UIFont systemFontOfSize:20];
 
         [self.button setTitle:@"Toto" forState:UIControlStateNormal];
         
         [button addTarget:self action:@selector(clickedButton:) forControlEvents:UIControlEventTouchDown];
         [button addTarget:self action:@selector(unClickButton:) forControlEvents:UIControlEventTouchUpInside];
-	//DLog();
         [self addSubview:button];
-	//DLog();
     }
     return self;
 }
@@ -57,14 +59,14 @@
 
 - (void)clickedButton:(id)sender
 {
-    DLog(@"sender: %@", sender);
+    //DLog(@"sender: %@", sender);
     self.button.highlighted = YES;
     //[NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(unClickButton) userInfo:nil repeats:NO];
 }
 
 - (void)unClickButton:(id)sender
 {
-    DLog(@"sender: %@", sender);
+    //DLog(@"sender: %@", sender);
     self.button.highlighted = NO;
 }
 

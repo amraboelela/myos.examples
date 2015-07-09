@@ -22,7 +22,7 @@
     [super loadView];
     //self.view = [[[UIView alloc] initWithFrame:CGRectMake(0,0,320,580)] autorelease];
 
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor yellowColor];
     //self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
     appleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"apple.png"]];
@@ -30,8 +30,10 @@
     self.appleView.frame = kBigAppleFrame;
     [self.view addSubview:appleView];
 
-    self.sillyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    //sillyButton = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
+    self.sillyButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.sillyButton.layer.cornerRadius = 7;
+    self.sillyButton.layer.masksToBounds = YES;
+
 // FIXME: The title is wrong on the button. Remove the exclamation point!!!!!!11!!
     [sillyButton setTitle:@"Click Me" forState:UIControlStateNormal];
 // .. and then realize you're updating both the Mac and iOS versions of your products at once.
