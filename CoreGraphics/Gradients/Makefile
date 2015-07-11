@@ -18,9 +18,9 @@
 LDLIBS=-lFoundation
 
 ifeq ($(APP_TYPE),NativeApp)
-LDLIBS+=-lNAIOKit -lNACoreGraphics
+    LDLIBS+=-lNAIOKit -lNACoreGraphics -lNAUIKit
 else
-LDLIBS+=-lIOKit -lCoreGraphics
+    LDLIBS+=-lIOKit -lCoreGraphics -lUIKit
 endif
 
 OBJECTS = \
