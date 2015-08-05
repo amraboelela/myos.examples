@@ -1,11 +1,11 @@
 {
     "page" : {
-        "pageNumber": 0,
+        "pageNumber": -1,
         "xLocation": 0,
-        "yLocation": 2,
+        "yLocation": 0,
         "anchored": 0
     }
     "application" : {
-        "score": 9
+        "score": -1
     }
 }
