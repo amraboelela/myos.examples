@@ -1,11 +1,7 @@
 {
-    "page" : {
-        "pageNumber": -1,
-        "xLocation": 0,
-        "yLocation": 0,
-        "anchored": 0
-    }
-    "application" : {
-        "score": -1
-    }
+    "name": "RedRectangle"
+    "category": "Red Shape",
+    "xLocation": 0,
+    "yLocation": 0,
+    "score": 0
 }
