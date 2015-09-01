@@ -1,7 +1,4 @@
 {
-    "name": "RedRectangle"
-    "category": "Red Shape",
-    "xLocation": 0,
-    "yLocation": 0,
-    "score": 0
+    "name": "RedRectangle",
+    "category": "Red Shapes"
 }
