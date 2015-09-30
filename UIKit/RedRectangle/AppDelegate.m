@@ -28,7 +28,7 @@
 {
     //DLog(); 
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    //DLog(@"window: %@", window);
+    //DLog(@"window: %@", self.window);
     self.window.backgroundColor = [UIColor brownColor];
 
     RectangleView *solidView = [[[RectangleView alloc] initWithFrame:CGRectMake(0, 40, 170, 150)] autorelease];
