@@ -59,7 +59,7 @@
 
 - (void)clickedButton:(id)sender
 {
-    //DLog(@"sender: %@", sender);
+    DLog(@"sender: %@", sender);
     self.button.highlighted = YES;
     //[NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(unClickButton) userInfo:nil repeats:NO];
 }
