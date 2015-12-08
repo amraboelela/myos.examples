@@ -18,6 +18,5 @@
 LDLIBS=-lFoundation
 
 OBJECTS = \
-main.o \
 
 include ${MYOS_PATH}/sdk/app-makefile
