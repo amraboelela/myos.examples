@@ -15,7 +15,7 @@
 # Amr Aboelela <amraboelela@gmail.com>
 #
 
-LDLIBS=-lFoundation
+LDLIBS=-lFoundation -lCoreFoundation
 
 OBJECTS = \
 
