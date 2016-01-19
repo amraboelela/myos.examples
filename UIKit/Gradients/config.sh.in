@@ -1,3 +1,2 @@
 
 export BUILD_TYPE=Application
-export CFLAGS=-DDEBUG
