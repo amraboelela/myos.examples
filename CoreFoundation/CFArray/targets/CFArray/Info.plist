@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>English</string>
 	<key>CFBundleDisplayName</key>
 	<string>CFArray</string>
 	<key>CFBundleExecutable</key>
 	<string>CFArray</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.myos.corefoundation.cfarray</string>
+	<string>org.myos.corefoundation.CFArray</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

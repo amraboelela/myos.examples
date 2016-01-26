@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>English</string>
 	<key>CFBundleDisplayName</key>
 	<string>EnvironmentVariables</string>
 	<key>CFBundleExecutable</key>
 	<string>EnvironmentVariables</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.myos.tools.environmentvariables</string>
+	<string>org.myos.tools.EnvironmentVariables</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

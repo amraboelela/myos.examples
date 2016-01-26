@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>English</string>
 	<key>CFBundleDisplayName</key>
 	<string>HelloWorld-c</string>
 	<key>CFBundleExecutable</key>
 	<string>HelloWorld-c</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.myos.tools.helloworld-c</string>
+	<string>org.myos.tools.HelloWorld-c</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

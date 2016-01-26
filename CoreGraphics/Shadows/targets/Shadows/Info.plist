@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>English</string>
 	<key>CFBundleDisplayName</key>
 	<string>Shadows</string>
 	<key>CFBundleExecutable</key>
 	<string>Shadows</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.myos.coregraphics.shadows</string>
+	<string>org.myos.coregraphics.Shadows</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

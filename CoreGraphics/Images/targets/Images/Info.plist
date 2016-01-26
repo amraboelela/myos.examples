@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>English</string>
 	<key>CFBundleDisplayName</key>
 	<string>Images</string>
 	<key>CFBundleExecutable</key>
 	<string>Images</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.myos.coregraphics.images</string>
+	<string>org.myos.coregraphics.Images</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

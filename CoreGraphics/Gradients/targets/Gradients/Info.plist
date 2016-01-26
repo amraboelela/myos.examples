@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>English</string>
 	<key>CFBundleDisplayName</key>
 	<string>Gradients</string>
 	<key>CFBundleExecutable</key>
 	<string>Gradients</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.myos.coregraphics.gradients</string>
+	<string>org.myos.coregraphics.Gradients</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

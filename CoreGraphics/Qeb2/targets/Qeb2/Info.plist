@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>English</string>
 	<key>CFBundleDisplayName</key>
 	<string>Qeb2</string>
 	<key>CFBundleExecutable</key>
 	<string>Qeb2</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.myos.coregraphics.qeb2</string>
+	<string>org.myos.coregraphics.Qeb2</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
