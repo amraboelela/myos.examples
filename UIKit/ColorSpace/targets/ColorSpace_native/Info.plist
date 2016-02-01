@@ -5,17 +5,17 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>NAGradients</string>
+	<string>ColorSpace_native</string>
 	<key>CFBundleExecutable</key>
-	<string>NAGradients</string>
+	<string>ColorSpace_native</string>
 	<key>CFBundleIconFile</key>
 	<string>Icon.png</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.myos.uikit.NAGradients</string>
+	<string>org.myos.uikit.ColorSpace_native</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>NAGradients</string>
+	<string>ColorSpace_native</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
@@ -23,7 +23,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>LSApplicationCategoryType</key>
-	<string>public.app-category.entertainment</string>
+	<string>public.app-category.graphics-design</string>
 	<key>LSRequiresNativeExecution</key>
 	<true/>
 </dict>

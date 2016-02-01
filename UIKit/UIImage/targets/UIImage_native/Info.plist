@@ -5,17 +5,17 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>NABlueCircle</string>
+	<string>UIImage_native</string>
 	<key>CFBundleExecutable</key>
-	<string>NABlueCircle</string>
+	<string>UIImage_native</string>
 	<key>CFBundleIconFile</key>
 	<string>Icon.png</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.myos.uikit.NABlueCircle</string>
+	<string>org.myos.uikit.UIImage_native</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>NABlueCircle</string>
+	<string>UIImage_native</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
@@ -23,7 +23,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>LSApplicationCategoryType</key>
-	<string>public.app-category.graphics-design</string>
+	<string>public.app-category.entertainment</string>
 	<key>LSRequiresNativeExecution</key>
 	<true/>
 </dict>

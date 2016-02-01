@@ -5,25 +5,25 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>NAMultiApple</string>
+	<string>Shapes_native</string>
 	<key>CFBundleExecutable</key>
-	<string>NAMultiApple</string>
+	<string>Shapes_native</string>
 	<key>CFBundleIconFile</key>
 	<string>Icon.png</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.myos.uikit.NAMultiApple</string>
+	<string>org.myos.uikit.Shapes_native</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>NAMultiApple</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
+	<string>Shapes_native</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.graphics-design</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>LSApplicationCategoryType</key>
-	<string>Games</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
 	<key>LSRequiresNativeExecution</key>
 	<true/>
 </dict>
