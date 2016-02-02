@@ -5,17 +5,17 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>NAAnimationGradients</string>
+	<string>AnimationGradients_native</string>
 	<key>CFBundleExecutable</key>
-	<string>NAAnimationGradients</string>
+	<string>AnimationGradients_native</string>
 	<key>CFBundleIconFile</key>
 	<string>Icon.png</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.myos.NAAnimationGradients</string>
+	<string>org.myos.AnimationGradients_native</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>NAAnimationGradients</string>
+	<string>AnimationGradients_native</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
