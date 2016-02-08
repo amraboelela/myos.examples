@@ -5,7 +5,7 @@ xcuserdata
 bin
 gen
 local.properties
-config.develop.sh
-config.release.sh
+*_debug.sh
+*_release.sh
 *.o
 *.d
