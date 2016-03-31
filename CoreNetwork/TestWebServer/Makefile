@@ -1,5 +1,5 @@
 
-LDLIBS=-lFoundation
+LDLIBS=-lFoundation -lCoreNetwork
 
 OBJECTS = \
 

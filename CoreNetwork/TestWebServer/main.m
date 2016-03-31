@@ -26,7 +26,7 @@
    */ 
 
 #import	<Foundation/Foundation-private.h>
-#import	<CFNetwork/CFNetwork-private.h"
+#import	<CoreNetwork/CoreNetwork.h>
 
 @interface	Handler: NSObject
 
@@ -86,3 +86,4 @@ int main()
     RELEASE(pool);
     return 0;
 }
+
