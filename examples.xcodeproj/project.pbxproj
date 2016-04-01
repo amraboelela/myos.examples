@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		63D9C3E91CA9B4320002879F /* CFNetwork */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CFNetwork; sourceTree = "<group>"; };
+		63F9D1521CAE300400D80CF6 /* WebServer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebServer; sourceTree = "<group>"; };
+		63F9D1531CAE300400D80CF6 /* WebServices */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebServices; sourceTree = "<group>"; };
 		F51FCC731B153E8F00C182B0 /* QuartzCore */ = {isa = PBXFileReference; lastKnownFileType = folder; path = QuartzCore; sourceTree = "<group>"; };
 		F564A66619D0BF390069E9BB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		F564A66A19D0BF390069E9BB /* UIKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIKit; sourceTree = "<group>"; };
@@ -21,7 +22,6 @@
 		F564A65D19D0BF060069E9BB = {
 			isa = PBXGroup;
 			children = (
-				63D9C3E91CA9B4320002879F /* CFNetwork */,
 				F5B716D81A82A6AF00DA002A /* c-tools */,
 				F5F835BA1A7F351000C52FC7 /* CoreFoundation */,
 				F5B716DA1A82A85800DA002A /* CoreGraphics */,
@@ -29,6 +29,8 @@
 				F51FCC731B153E8F00C182B0 /* QuartzCore */,
 				F564A66619D0BF390069E9BB /* README.md */,
 				F564A66A19D0BF390069E9BB /* UIKit */,
+				63F9D1521CAE300400D80CF6 /* WebServer */,
+				63F9D1531CAE300400D80CF6 /* WebServices */,
 			);
 			sourceTree = "<group>";
 		};
