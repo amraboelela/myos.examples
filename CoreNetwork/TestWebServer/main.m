@@ -69,17 +69,17 @@ int main()
       nil]
      ];
     
-    NSCAssert(NO == [WebServer matchIP: @"1.2.3.4" to: @"4.5.6.7"], @"Match1");
-    NSCAssert([WebServer matchIP: @"1.2.3.4" to: @"1.2.3.4"], @"Match2");
-    NSCAssert([WebServer matchIP: @"1.2.3.4" to: @"1.2.3.0/24"], @"Match3");
-    NSCAssert([WebServer matchIP: @"1.2.4.4" to: @"1.2.3.0/16"], @"Match4");
+    NSCAssert(NO == [WebServer matchIP:@"1.2.3.4" to:@"4.5.6.7"], @"Match1");
+    NSCAssert([WebServer matchIP:@"1.2.3.4" to:@"1.2.3.4"], @"Match2");
+    NSCAssert([WebServer matchIP:@"1.2.3.4" to:@"1.2.3.0/24"], @"Match3");
+    NSCAssert([WebServer matchIP:@"1.2.4.4" to:@"1.2.3.0/16"], @"Match4");
     
     server = [WebServer new];
     
     handler = [Handler new];
-    [server setDelegate: handler];
-    [server setPort: [defs stringForKey: @"Port"] secure: nil];
-    [server setVerbose: [defs boolForKey: @"Debug"]];
+    [server setDelegate:handler];
+    [server setPort:[defs stringForKey:@"Port"] secure:nil];
+    [server setVerbose:[defs boolForKey:@"Debug"]];
     [[NSRunLoop currentRunLoop] run];
     [handler release];
     
