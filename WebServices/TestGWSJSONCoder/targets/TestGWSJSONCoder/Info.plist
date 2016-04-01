@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>TestWebServer</string>
+	<string>TestGWSJSONCoder</string>
 	<key>CFBundleExecutable</key>
-	<string>TestWebServer</string>
+	<string>TestGWSJSONCoder</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.myos.webserver.TestWebServer</string>
+	<string>org.myos.TestGWSJSONCoder</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>TestWebServer</string>
+	<string>TestGWSJSONCoder</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleSignature</key>

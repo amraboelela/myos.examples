@@ -4,7 +4,7 @@
    Written by:  Richard Frith-Macdonald <rfm@gnu.org>
    Date:	September 2005
    Modified by: Amr Aboelela <amraboelela@gmail.com>
-   Date: Mar 2016
+   Date:    March 2016
  
    This file is part of the SQLClient Library.
 
