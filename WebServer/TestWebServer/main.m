@@ -26,7 +26,7 @@
    */ 
 
 #import	<Foundation/Foundation-private.h>
-#import	<CoreNetwork/CoreNetwork.h>
+#import	<WebServer/WebServer.h>
 
 @interface	Handler: NSObject
 
@@ -65,7 +65,8 @@ int main()
     defs = [NSUserDefaults standardUserDefaults];
     [defs registerDefaults:
      [NSDictionary dictionaryWithObjectsAndKeys:
-      @"80", @"Port",
+      @"8080", @"Port",
+      [NSNumber numberWithBool:YES], @"Debug",
       nil]
      ];
     
