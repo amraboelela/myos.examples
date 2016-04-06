@@ -25,10 +25,10 @@
    $Date: 2007-09-14 13:54:55 +0100 (Fri, 14 Sep 2007) $ $Revision: 25485 $
    */ 
 
-#import	<Foundation/Foundation.h>
-#import	<GNUstepBase/GSMime.h>
+#import	<Foundation/Foundation-private.h>
+//#import	<GNUstepBase/GSMime.h>
 #import	<WebServer/WebServer.h>
-#import	"../WebServices.h"
+#import	<WebServices/WebServices.h>
 
 @interface	Handler: NSObject
 - (BOOL) processRequest: (GSMimeDocument*)request

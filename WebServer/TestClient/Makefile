@@ -1,5 +1,5 @@
 
-LDLIBS=-lFoundation -lCoreNetwork
+LDLIBS=-lFoundation -lWebServer -lWebServices
 
 OBJECTS = \
 
