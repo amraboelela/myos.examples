@@ -18,11 +18,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreFoundation/CoreFoundation.h>
 
-//#import <CoreGraphics/StandardGlyphNames.h>
-
-//extern const char * const StandardGlyphNames[258];
-//extern const char * const StandardGlyphNamesKeys[258];
-
 int main (int argc, const char * argv[])
 {
     

@@ -21,8 +21,6 @@
 #import <CoreFoundation/CFString.h>
 #import <CoreFoundation/CFAttributedString.h>
 
-
-
 void *CFIndexRetain1(CFAllocatorRef allocator, const void *ptr) {
     CFIndex *newPtr = (CFIndex*)CFAllocatorAllocate(allocator, sizeof(CFIndex), 0);
     *newPtr = *((CFIndex*)ptr);
