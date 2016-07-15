@@ -8,6 +8,7 @@ else
 endif
 
 OBJECTS = \
-layers.o \
+    main \
+    layers \
 
 include ${MYOS_PATH}/sdk/app-makefile

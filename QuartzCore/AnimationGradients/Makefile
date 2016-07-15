@@ -8,7 +8,8 @@ else
 endif
 
 OBJECTS = \
-    AppDelegate.o \
-    AnimationGradientsView.o \
+    main \
+    AppDelegate \
+    AnimationGradientsView \
 
 include ${MYOS_PATH}/sdk/app-makefile

@@ -8,7 +8,8 @@ else
 endif
 
 OBJECTS = \
-    AppDelegate.o \
-    ColorSpaceView.o \
+    main \
+    AppDelegate \
+    ColorSpaceView \
 
 include ${MYOS_PATH}/sdk/app-makefile

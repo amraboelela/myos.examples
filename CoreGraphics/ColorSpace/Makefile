@@ -8,6 +8,7 @@ else
 endif
 
 OBJECTS = \
-    colorspace.o \
+    main \
+    colorspace \
 
 include ${MYOS_PATH}/sdk/app-makefile

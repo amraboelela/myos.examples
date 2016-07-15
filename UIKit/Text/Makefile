@@ -8,6 +8,7 @@ else
 endif
 
 OBJECTS = \
-    AppDelegate.o \
+    main \
+    AppDelegate \
 
 include ${MYOS_PATH}/sdk/app-makefile

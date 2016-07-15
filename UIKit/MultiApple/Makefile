@@ -8,8 +8,9 @@ else
 endif
 
 OBJECTS = \
-    AppDelegate.o \
-    AppleController.o \
-    MyUIViewController.o \
+    main \
+    AppDelegate \
+    AppleController \
+    MyUIViewController \
 
 include ${MYOS_PATH}/sdk/app-makefile

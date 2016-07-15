@@ -8,7 +8,8 @@ else
 endif
 
 OBJECTS = \
-    AppDelegate.o \
-    RoundButtonView.o \
+    main \
+    AppDelegate \
+    RoundButtonView \
 
 include ${MYOS_PATH}/sdk/app-makefile

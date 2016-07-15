@@ -8,6 +8,7 @@ else
 endif
 
 OBJECTS = \
-gradients.o \
+    main \
+    gradients \
 
 include ${MYOS_PATH}/sdk/app-makefile

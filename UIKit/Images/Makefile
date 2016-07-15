@@ -8,7 +8,8 @@ else
 endif
 
 OBJECTS = \
-    AppDelegate.o \
-    ImagesView.o \
+    main \
+    AppDelegate \
+    ImagesView \
 
 include ${MYOS_PATH}/sdk/app-makefile

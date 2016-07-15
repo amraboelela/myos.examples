@@ -8,6 +8,7 @@ else
 endif
 
 OBJECTS = \
-    qeb2.o \
+    main \
+    qeb2 \
 
 include ${MYOS_PATH}/sdk/app-makefile

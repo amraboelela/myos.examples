@@ -8,9 +8,10 @@ else
 endif
 
 OBJECTS = \
-    AppDelegate.o \
-    Layers.o \
-    BlueView.o \
-    SmileyFaceView.o \
+    main \
+    AppDelegate \
+    Layers \
+    BlueView \
+    SmileyFaceView \
 
 include ${MYOS_PATH}/sdk/app-makefile

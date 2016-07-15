@@ -8,6 +8,7 @@ else
 endif
 
 OBJECTS = \
-    text.o \
+    main \
+    text \
 
 include ${MYOS_PATH}/sdk/app-makefile

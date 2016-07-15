@@ -8,9 +8,10 @@ else
 endif
 
 OBJECTS = \
-    arcs.o \
-    ovals.o \
-    rects.o \
-    shapes.o \
+    main \
+    arcs \
+    ovals \
+    rects \
+    shapes \
 
 include ${MYOS_PATH}/sdk/app-makefile

@@ -8,8 +8,9 @@ else
 endif
 
 OBJECTS = \
-    AppDelegate.o \
-    RedRectangleVC.o \
-    RRSolidView.o \
+    main \
+    AppDelegate \
+    RedRectangleVC \
+    RRSolidView \
 
 include ${MYOS_PATH}/sdk/app-makefile
